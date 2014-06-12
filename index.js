@@ -38,7 +38,8 @@ fs.writeFile(networkInterfaces.path, networkInterfaces.content.access, function(
         exec("ifconfig wlan0 192.168.42.1", puts);
         exec("sudo service isc-dhcp-server start", puts);
         exec("sudo service hostapd start", puts);
-        initServer();
+        setTimeout(initServer(), 3000);
+        
     }
 });
 
