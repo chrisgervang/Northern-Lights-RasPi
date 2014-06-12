@@ -20,13 +20,7 @@ var networkInterfaces = {
 			wpa-ssid \"Gervang Wireless\"\n
 			wpa-password \"cocoapunch\"",
 		
-		access: 
-			"auto lo\n\n
-			iface lo inet loopback\n
-			iface eth0 inet dhcp\n\n
-			iface wlan0 inet static\n
-			address 192.168.42.1\n
-			netmask 255.255.255.0"
+		access: "auto lo\n\niface lo inet loopback\niface eth0 inet dhcp\n\niface wlan0 inet static\naddress 192.168.42.1\nnetmask 255.255.255.0"
 	}
 }
 
