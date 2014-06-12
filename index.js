@@ -40,7 +40,7 @@ fs.writeFile(networkInterfaces.path, networkInterfaces.content.access, function(
 });
 
 // Create a server with a host and port
-var server = Hapi.createServer('192.168.1.74', 8000);
+var server = Hapi.createServer('192.168.42.1', 8000);
 
 // Add the route
 var connect = function (request, reply) {
