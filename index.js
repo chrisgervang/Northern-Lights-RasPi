@@ -10,15 +10,14 @@ exec("sudo ifdown wlan0", puts);
 var networkInterfaces = {
 	path: "/etc/network/interfaces",
 	content: {
-		connect: 
-			"auto lo\n\n
-			iface lo inet loopback\n
-			iface eth0 inet dhcp\n\n
-			auto wlan0\n
-			allow-hotplug wlan0\n
-			iface wlan0 inet dhcp\n
-			wpa-ssid \"Gervang Wireless\"\n
-			wpa-password \"cocoapunch\"",
+		connect: "auto lo\n\n" + 
+			"iface lo inet loopback\n" +
+			"iface eth0 inet dhcp\n\n" +
+			"auto wlan0\n" + 
+			"allow-hotplug wlan0\n" + 
+			"iface wlan0 inet dhcp\n" +
+			"wpa-ssid \"Gervang Wireless\"\n" +
+			"wpa-password \"cocoapunch\"",
 		
 		access: "auto lo\n\niface lo inet loopback\niface eth0 inet dhcp\n\niface wlan0 inet static\naddress 192.168.42.1\nnetmask 255.255.255.0"
 	}
