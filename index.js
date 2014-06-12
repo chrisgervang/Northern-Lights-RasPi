@@ -4,10 +4,6 @@ var fs   = require('fs');
 var exec = require('child_process').exec;
 var puts = function(error, stdout, stderr) { sys.puts(stdout) }
 
-//init access point
-console.log("sudo ifdown wlan0");
-exec("sudo ifdown wlan0", puts);
-
 var networkInterfaces = {
 	path: "/etc/network/interfaces",
 	content: {
@@ -28,20 +24,46 @@ var networkInterfaces = {
 			"netmask 255.255.255.0"
 	}
 }
-console.log("writing file");
 
-fs.writeFile(networkInterfaces.path, networkInterfaces.content.access, function(err) {
-    if(err) {
-        console.log(err);
-    } else {
-        console.log("networkInterfaces.content.access was saved!");
-        exec("ifconfig wlan0 192.168.42.1", puts);
-        exec("sudo service isc-dhcp-server start", puts);
-        exec("sudo service hostapd start", puts);
-        setTimeout(initServer(), 3000);
-        
-    }
-});
+//init wifi
+exec("sudo service hostapd stop", puts);
+exec("sudo service isc-dhcp-server stop", puts);
+setTimeout(function() {
+	console.log("sudo ifconfig wlan0 down");
+	exec("sudo ifconfig wlan0 down", puts);
+	fs.writeFile(networkInterfaces.path, networkInterfaces.content.connect, function(err) {
+	    if(err) {
+	        console.log(err);
+	    } else {
+	        console.log("networkInterfaces.content.connect was saved!");
+	        exec("sudo ifup wlan0", puts);
+	        console.log("waiting for 10 secs");
+	        setTimeout(initAccess(), 10000);
+	    }
+	});
+},3000);
+
+
+var initAccess = function() {
+	//init access point
+	console.log("sudo ifdown wlan0");
+	exec("sudo ifdown wlan0", puts);
+	console.log("writing file");
+
+	fs.writeFile(networkInterfaces.path, networkInterfaces.content.access, function(err) {
+	    if(err) {
+	        console.log(err);
+	    } else {
+	        console.log("networkInterfaces.content.access was saved!");
+	        exec("ifconfig wlan0 192.168.42.1", puts);
+	        exec("sudo service isc-dhcp-server start", puts);
+	        exec("sudo service hostapd start", puts);
+	        setTimeout(initServer(), 3000);
+	        
+	    }
+	});
+}
+
 
 console.log("watching file");
 fs.watch("/var/log/syslog", {
