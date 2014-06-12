@@ -5,6 +5,7 @@ var exec = require('child_process').exec;
 var puts = function(error, stdout, stderr) { sys.puts(stdout) }
 
 //init access point
+console.log("sudo ifdown wlan0");
 exec("sudo ifdown wlan0", puts);
 
 var networkInterfaces = {
@@ -27,6 +28,7 @@ var networkInterfaces = {
 			"netmask 255.255.255.0"
 	}
 }
+console.log("writing file");
 
 fs.writeFile(networkInterfaces.path, networkInterfaces.content.access, function(err) {
     if(err) {
@@ -38,7 +40,7 @@ fs.writeFile(networkInterfaces.path, networkInterfaces.content.access, function(
         exec("sudo service hostapd start", puts);
     }
 });
-
+console.log("init server");
 // Create a server with a host and port
 var server = Hapi.createServer('192.168.42.1', 8000);
 
@@ -57,6 +59,8 @@ server.route([
 	    }
 	},{ method: 'POST', path: '/connect', handler: connect }
 ]);
+console.log("init routes");
 
 // Start the server
 server.start();
+console.log("start server");
