@@ -38,7 +38,7 @@ setTimeout(function(){
 		    } else {
 		        console.log("networkInterfaces.content.connect was saved!");
 		        exec("sudo ifup wlan0", puts);
-		        console.log("waiting for 10 secs");
+		        console.log("waiting for 10 secs: access point init");
 		        setTimeout(function(){initAccess()}, 10000);
 		    }
 		});
@@ -59,7 +59,8 @@ var initAccess = function() {
 	        exec("ifconfig wlan0 192.168.42.1", puts);
 	        exec("sudo service isc-dhcp-server start", puts);
 	        exec("sudo service hostapd start", puts);
-	        setTimeout(function(){initServer()}, 3000);
+	        console.log("waitng 10 seconds: server init");
+	        setTimeout(function(){initServer()}, 10000);
 	        
 	    }
 	});
