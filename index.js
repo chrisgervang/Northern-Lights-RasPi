@@ -57,10 +57,13 @@ var initAccess = function() {
 	    } else {
 	        console.log("networkInterfaces.content.access was saved!");
 	        exec("ifconfig wlan0 192.168.42.1", puts);
-	        exec("sudo service isc-dhcp-server start", puts);
-	        exec("sudo service hostapd start", puts);
-	        console.log("waitng 10 seconds: server init");
-	        setTimeout(function(){initServer()}, 10000);
+	        setTimeout(function(){
+	        	exec("sudo service isc-dhcp-server start", puts);
+		        exec("sudo service hostapd start", puts);
+		        console.log("waitng 10 seconds: server init");
+		        setTimeout(function(){initServer()}, 10000);
+	        },1000)
+	        
 	        
 	    }
 	});
