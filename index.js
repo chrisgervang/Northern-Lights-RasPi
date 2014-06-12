@@ -42,6 +42,13 @@ fs.writeFile(networkInterfaces.path, networkInterfaces.content.access, function(
     }
 });
 
+console.log("watching file");
+fs.watch("/var/log/syslog", {
+  persistent: true
+}, function(event, filename) {
+  console.log(event + " event occurred on " + filename);
+});
+
 var initServer = function() {
 	console.log("init server");
 	// Create a server with a host and port
