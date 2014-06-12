@@ -27,22 +27,23 @@ var networkInterfaces = {
 
 //init wifi
 exec("sudo service hostapd stop", puts);
-exec("sudo service isc-dhcp-server stop", puts);
-setTimeout(function() {
-	console.log("sudo ifconfig wlan0 down");
-	exec("sudo ifconfig wlan0 down", puts);
-	fs.writeFile(networkInterfaces.path, networkInterfaces.content.connect, function(err) {
-	    if(err) {
-	        console.log(err);
-	    } else {
-	        console.log("networkInterfaces.content.connect was saved!");
-	        exec("sudo ifup wlan0", puts);
-	        console.log("waiting for 10 secs");
-	        setTimeout(initAccess(), 10000);
-	    }
-	});
-},3000);
-
+setTimeout(function(){
+	exec("sudo service isc-dhcp-server stop", puts);
+	setTimeout(function() {
+		console.log("sudo ifconfig wlan0 down");
+		exec("sudo ifconfig wlan0 down", puts);
+		fs.writeFile(networkInterfaces.path, networkInterfaces.content.connect, function(err) {
+		    if(err) {
+		        console.log(err);
+		    } else {
+		        console.log("networkInterfaces.content.connect was saved!");
+		        exec("sudo ifup wlan0", puts);
+		        console.log("waiting for 10 secs");
+		        setTimeout(initAccess(), 10000);
+		    }
+		});
+	},3000);
+}, 2000);
 
 var initAccess = function() {
 	//init access point
