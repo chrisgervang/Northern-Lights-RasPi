@@ -99,8 +99,8 @@ var initServer = function() {
 				file: './public/jquery-1.11.1.min.js'
 			}
 		},
-		{ method: 'GET', path: '/{path*}', handler: {
-		        directory: { path: './public', listing: true, index: true }
+		{ method: 'GET', path: '/public', handler: {
+		        directory: { path: './public/', listing: true, index: true }
 		    }
 		},{ method: 'POST', path: '/connect', handler: connect }
 	]);
