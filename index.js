@@ -68,6 +68,11 @@ var initServer = function() {
 	// Create a server with a host and port
 	var server = Hapi.createServer('192.168.42.1', 8000);
 
+	exec("iwlist scan", function (error, stdout, stderr) { 
+		sys.puts(parseIwlist(stdout));
+		//sys.puts(stdout) 
+	});
+
 	// Add the route
 	var connect = function (request, reply) {
 		var credentials = request.payload;
@@ -118,4 +123,51 @@ var initServer = function() {
 	// Start the server
 	server.start();
 	console.log("start server");
+}
+
+function parseIwlist(str) {
+    var out = str.replace(/^\s+/mg, '');
+    out = out.split('\n');
+    var cells = [];
+    var line;
+    var info = {};
+    var fields = {
+        'mac' : /^Cell \d+ - Address: (.*)/,
+        'ssid' : /^ESSID:"(.*)"/,
+        // 'protocol' : /^Protocol:(.*)/,
+        // 'mode' : /^Mode:(.*)/,
+        // 'frequency' : /^Frequency:(.*)/,
+        // 'encryption_key' : /Encryption key:(.*)/,
+        // 'bitrates' : /Bit Rates:(.*)/,
+        // 'quality' : /Quality(?:=|\:)([^\s]+)/,
+        'signal_level' : /Signal level(?:=|\:)([-\w]+)/
+    };
+
+    for (var i=0,l=out.length; i<l; i++) {
+        line = out[i].trim();
+
+        if (!line.length) {
+            continue;
+        }
+        if (line.match("Scan completed :")) {
+            continue;
+        }
+        if (line.match("Interface doesn't support scanning.")) {
+            continue;
+        }
+
+        if (line.match(fields.mac)) {
+            cells.push(info);
+            info = {};
+        }
+
+        for (var field in fields) {
+            if (line.match(fields[field])) {
+                info[field] = (fields[field].exec(line)[1]).trim();
+            }
+        }
+    }
+    cells.push(info);
+    cells.shift();
+    return cells;
 }
