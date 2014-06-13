@@ -98,18 +98,21 @@ var initServer = function() {
 				console.log("sudo ifconfig wlan0 down");
 				exec("sudo ifconfig wlan0 down", puts);
 				setTimeout(function(){
-					fs.writeFile(networkInterfaces.path, connect, function(err) {
-					    if(err) {
-					        console.log(err);
-					    } else {
-					        console.log("networkInterfaces.content.connect was saved!");
-					        // console.log("waiting for 10 secs: access point init");
-					        setTimeout(function(){ 
-					        	console.log("sudo ifup wlan0");
-					        	exec("sudo ifup wlan0", puts); 
-					        }, 1000);
-					    }
-					});
+					exec("sudo ifdown wlan0", puts);
+					setTimeout(function(){
+						fs.writeFile(networkInterfaces.path, connect, function(err) {
+						    if(err) {
+						        console.log(err);
+						    } else {
+						        console.log("networkInterfaces.content.connect was saved!");
+						        // console.log("waiting for 10 secs: access point init");
+						        setTimeout(function(){ 
+						        	console.log("sudo ifup wlan0");
+						        	exec("sudo ifup wlan0", puts); 
+						        }, 1000);
+						    }
+						});
+					},4000);
 				},2000);
 			}, 4000);
 		}, 2000);
