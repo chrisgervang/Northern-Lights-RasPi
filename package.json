@@ -18,5 +18,8 @@
   "homepage": "https://github.com/chrisgervang/NL-Pi",
   "dependencies": {
     "hapi": "^5.1.0"
+  },
+  "devDependencies": {
+    "prettyjson": "^1.0.0"
   }
 }

@@ -1,7 +1,8 @@
-var Hapi = require('hapi');
-var sys  = require('sys');
-var fs   = require('fs');
-var exec = require('child_process').exec;
+var Hapi 	   = require('hapi');
+var sys  	   = require('sys');
+var fs   	   = require('fs');
+var exec 	   = require('child_process').exec;
+var prettyjson = require('prettyjson');
 var puts = function(error, stdout, stderr) { sys.puts(stdout) }
 
 var networkInterfaces = {
@@ -69,7 +70,9 @@ var initServer = function() {
 	var server = Hapi.createServer('192.168.42.1', 8000);
 
 	exec("iwlist scan", function (error, stdout, stderr) { 
-		sys.puts(parseIwlist(stdout));
+		//sys.puts();
+		var networks = {parseIwlist(stdout)}
+		console.log(prettyjson.render(networks));
 		//sys.puts(stdout) 
 	});
 
