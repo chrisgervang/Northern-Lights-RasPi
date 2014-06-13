@@ -96,7 +96,7 @@ var initServer = function() {
 
 	server.route([
 		{ method: 'GET', path: '/{path*}', handler: {
-		        directory: { path: './public/', listing: false, index: true }
+		        directory: { path: './public/', listing: true, index: true }
 		    }
 		},{ method: 'POST', path: '/connect', handler: connect }
 	]);
