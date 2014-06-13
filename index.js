@@ -71,7 +71,7 @@ var initServer = function() {
 
 	exec("iwlist scan", function (error, stdout, stderr) { 
 		//sys.puts();
-		var networks = {parseIwlist(stdout)}
+		var networks = {cells: parseIwlist(stdout)}
 		console.log(prettyjson.render(networks));
 		//sys.puts(stdout) 
 	});
