@@ -25,6 +25,7 @@ var networkInterfaces = {
 	}
 }
 
+/*
 //init wifi
 exec("sudo service hostapd stop", puts);
 setTimeout(function(){
@@ -48,6 +49,10 @@ setTimeout(function(){
 		},1000);
 	}, 2000);
 }, 2000);
+*/
+
+exec("sudo ifconfig wlan0 down", puts);
+setTimeout(function(){initAccess()}, 1000);
 
 var initAccess = function() {
 	//init access point
