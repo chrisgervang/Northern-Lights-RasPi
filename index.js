@@ -95,8 +95,8 @@ var initServer = function() {
 					    } else {
 					        console.log("networkInterfaces.content.connect was saved!");
 					        exec("sudo ifup wlan0", puts);
-					        console.log("waiting for 10 secs: access point init");
-					        setTimeout(function(){initAccess()}, 10000);
+					        // console.log("waiting for 10 secs: access point init");
+					        // setTimeout(function(){initAccess()}, 10000);
 					    }
 					});
 				},1000);
