@@ -13,8 +13,8 @@ var networkInterfaces = {
 			"auto wlan0\n" + 
 			"allow-hotplug wlan0\n" + 
 			"iface wlan0 inet dhcp\n" +
-			"wpa-ssid \"Gervang Wireless\"\n" +
-			"wpa-psk \"cocoapunch\"",
+			"wpa-ssid \"{ssid}\"\n" +
+			"wpa-psk \"{password}\"",
 		
 		access: "auto lo\n\n" +
 			"iface lo inet loopback\n" + 
@@ -25,31 +25,7 @@ var networkInterfaces = {
 	}
 }
 
-/*
-//init wifi
-exec("sudo service hostapd stop", puts);
-setTimeout(function(){
 
-	exec("sudo service isc-dhcp-server stop", puts);
-	setTimeout(function() {
-
-		console.log("sudo ifconfig wlan0 down");
-		exec("sudo ifconfig wlan0 down", puts);
-		setTimeout(function(){
-			fs.writeFile(networkInterfaces.path, networkInterfaces.content.connect, function(err) {
-			    if(err) {
-			        console.log(err);
-			    } else {
-			        console.log("networkInterfaces.content.connect was saved!");
-			        exec("sudo ifup wlan0", puts);
-			        console.log("waiting for 10 secs: access point init");
-			        setTimeout(function(){initAccess()}, 10000);
-			    }
-			});
-		},1000);
-	}, 2000);
-}, 2000);
-*/
 
 exec("sudo ifconfig wlan0 down", puts);
 setTimeout(function(){initAccess()}, 1000);
@@ -96,7 +72,38 @@ var initServer = function() {
 	var connect = function (request, reply) {
 		var credentials = request.payload;
 		console.log("hi!", credentials);
-		reply('connected!');
+		// reply('connected!');
+
+		var connect = networkInterfaces.content.connect;
+		connect = connect.replace("{ssid}", credentials.ssid);
+		connect = connect.replace("{password}", credentials.password);
+
+		console.log(connect);
+		//init wifi
+		exec("sudo service hostapd stop", puts);
+		setTimeout(function(){
+
+			exec("sudo service isc-dhcp-server stop", puts);
+			setTimeout(function() {
+
+				console.log("sudo ifconfig wlan0 down");
+				exec("sudo ifconfig wlan0 down", puts);
+				setTimeout(function(){
+					fs.writeFile(networkInterfaces.path, connect, function(err) {
+					    if(err) {
+					        console.log(err);
+					    } else {
+					        console.log("networkInterfaces.content.connect was saved!");
+					        exec("sudo ifup wlan0", puts);
+					        console.log("waiting for 10 secs: access point init");
+					        setTimeout(function(){initAccess()}, 10000);
+					    }
+					});
+				},1000);
+			}, 2000);
+		}, 2000);
+		
+
 	}
 
 	server.route([
