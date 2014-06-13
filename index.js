@@ -85,7 +85,7 @@ fs.watch("/var/log/syslog", {
 var initServer = function() {
 	console.log("init server");
 	// Create a server with a host and port
-	var server = Hapi.createServer('192.168.42.1', 8000);
+	var server = Hapi.createServer('192.168.42.1', 8000, { files: { relativeTo: __dirname } });
 
 	// Add the route
 	var connect = function (request, reply) {
@@ -95,6 +95,10 @@ var initServer = function() {
 	}
 
 	server.route([
+		{ method: 'GET', path: '/static/jquery-1.11.1.min.js', handler: {
+				file: './public/jquery-1.11.1.min.js'
+			}
+		},
 		{ method: 'GET', path: '/{path*}', handler: {
 		        directory: { path: './public', listing: false, index: true }
 		    }
