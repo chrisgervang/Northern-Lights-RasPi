@@ -95,12 +95,8 @@ var initServer = function() {
 	}
 
 	server.route([
-		{ method: 'GET', path: '/static/jquery-1.11.1.min.js', handler: {
-				file: './public/jquery-1.11.1.min.js'
-			}
-		},
-		{ method: 'GET', path: '/public/{path*}', handler: {
-		        directory: { path: './public/', listing: true, index: false }
+		{ method: 'GET', path: '/{path*}', handler: {
+		        directory: { path: './public/', listing: false, index: true }
 		    }
 		},{ method: 'POST', path: '/connect', handler: connect }
 	]);
