@@ -85,7 +85,7 @@ fs.watch("/var/log/syslog", {
 var initServer = function() {
 	console.log("init server");
 	// Create a server with a host and port
-	var server = Hapi.createServer('192.168.42.1', 8000, { files: { relativeTo: __dirname } });
+	var server = Hapi.createServer('192.168.42.1', 8000);
 
 	// Add the route
 	var connect = function (request, reply) {
