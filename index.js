@@ -28,21 +28,25 @@ var networkInterfaces = {
 //init wifi
 exec("sudo service hostapd stop", puts);
 setTimeout(function(){
+
 	exec("sudo service isc-dhcp-server stop", puts);
 	setTimeout(function() {
+
 		console.log("sudo ifconfig wlan0 down");
 		exec("sudo ifconfig wlan0 down", puts);
-		fs.writeFile(networkInterfaces.path, networkInterfaces.content.connect, function(err) {
-		    if(err) {
-		        console.log(err);
-		    } else {
-		        console.log("networkInterfaces.content.connect was saved!");
-		        exec("sudo ifup wlan0", puts);
-		        console.log("waiting for 10 secs: access point init");
-		        setTimeout(function(){initAccess()}, 10000);
-		    }
-		});
-	},3000);
+		setTimeout(function(){
+			fs.writeFile(networkInterfaces.path, networkInterfaces.content.connect, function(err) {
+			    if(err) {
+			        console.log(err);
+			    } else {
+			        console.log("networkInterfaces.content.connect was saved!");
+			        exec("sudo ifup wlan0", puts);
+			        console.log("waiting for 10 secs: access point init");
+			        setTimeout(function(){initAccess()}, 10000);
+			    }
+			});
+		},1000);
+	}, 2000);
 }, 2000);
 
 var initAccess = function() {
@@ -50,23 +54,24 @@ var initAccess = function() {
 	console.log("sudo ifdown wlan0");
 	exec("sudo ifdown wlan0", puts);
 	console.log("writing file");
-
-	fs.writeFile(networkInterfaces.path, networkInterfaces.content.access, function(err) {
-	    if(err) {
-	        console.log(err);
-	    } else {
-	        console.log("networkInterfaces.content.access was saved!");
-	        exec("ifconfig wlan0 192.168.42.1", puts);
-	        setTimeout(function(){
-	        	exec("sudo service isc-dhcp-server start", puts);
-		        exec("sudo service hostapd start", puts);
-		        console.log("waitng 10 seconds: server init");
-		        setTimeout(function(){initServer()}, 10000);
-	        },1000)
-	        
-	        
-	    }
-	});
+	setTimeout(function(){
+		fs.writeFile(networkInterfaces.path, networkInterfaces.content.access, function(err) {
+		    if(err) {
+		        console.log(err);
+		    } else {
+		        console.log("networkInterfaces.content.access was saved!");
+		        exec("ifconfig wlan0 192.168.42.1", puts);
+		        setTimeout(function(){
+		        	exec("sudo service isc-dhcp-server start", puts);
+			        setTimeout(function(){
+			        	exec("sudo service hostapd start", puts);
+			        	console.log("waitng 10 seconds: server init");
+			        	setTimeout(function(){initServer()}, 10000);
+			        }, 1000);
+		        }, 1000);
+		    }
+		});
+	},3000);
 }
 
 
