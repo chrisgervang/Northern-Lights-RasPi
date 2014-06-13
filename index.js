@@ -79,7 +79,7 @@ console.log("watching file");
 fs.watch("/var/log/syslog", {
   persistent: true
 }, function(event, filename) {
-  console.log(event + " event occurred on " + filename);
+  console.log(".");
 });
 
 var initServer = function() {
