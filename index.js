@@ -14,7 +14,7 @@ var networkInterfaces = {
 			"allow-hotplug wlan0\n" + 
 			"iface wlan0 inet dhcp\n" +
 			"wpa-ssid \"Gervang Wireless\"\n" +
-			"wpa-password \"cocoapunch\"",
+			"wpa-psk \"cocoapunch\"",
 		
 		access: "auto lo\n\n" +
 			"iface lo inet loopback\n" + 
