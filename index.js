@@ -82,10 +82,10 @@ var initServer = function() {
 		var credentials = request.payload;
 		console.log("hi!", credentials);
 		// reply('connected!');
-		console.log("shutdown muwa ha ha");
+		// console.log("shutdown muwa ha ha");
 
-		exec("sudo shutdown -h now", puts);
-		/*
+		// exec("sudo shutdown -h now", puts);
+		
 		var connect = networkInterfaces.content.connect;
 		connect = connect.replace("{ssid}", credentials.ssid);
 		connect = connect.replace("{password}", credentials.password);
@@ -119,7 +119,7 @@ var initServer = function() {
 				},2000);
 			}, 4000);
 		}, 2000);
-		*/
+		
 
 	}
 
