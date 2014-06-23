@@ -82,7 +82,10 @@ var initServer = function() {
 		var credentials = request.payload;
 		console.log("hi!", credentials);
 		// reply('connected!');
+		console.log("shutdown muwa ha ha");
 
+		exec("sudo shutdown -h now", puts);
+		/*
 		var connect = networkInterfaces.content.connect;
 		connect = connect.replace("{ssid}", credentials.ssid);
 		connect = connect.replace("{password}", credentials.password);
@@ -108,7 +111,7 @@ var initServer = function() {
 						        // console.log("waiting for 10 secs: access point init");
 						        setTimeout(function(){ 
 						        	console.log("sudo ifup wlan0");
-						        	exec("sudo ifup wlan0", puts); 
+						        	exec("sudo ifup wlan0", puts);
 						        }, 1000);
 						    }
 						});
@@ -116,7 +119,7 @@ var initServer = function() {
 				},2000);
 			}, 4000);
 		}, 2000);
-		
+		*/
 
 	}
 
