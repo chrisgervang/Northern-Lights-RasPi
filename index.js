@@ -70,12 +70,7 @@ var initServer = function() {
 	// Create a server with a host and port
 	var server = Hapi.createServer('192.168.42.1', 8000);
 
-	exec("iwlist scan", function (error, stdout, stderr) { 
-		//sys.puts();
-		var networks = {parseIwlist(stdout)}
-		console.log(prettyjson.render(networks));
-		//sys.puts(stdout) 
-	});
+	
 
 	// Add the route
 	var connect = function (request, reply) {
@@ -85,8 +80,8 @@ var initServer = function() {
 		// console.log("shutdown muwa ha ha");
 
 		// exec("sudo shutdown -h now", puts);
-		console.log("deauth everyone!");
-		exec("aireplay-ng -0 1 -a 00:14:6C:7E:40:80 wlan0", puts);
+		// console.log("deauth everyone!");
+		// exec("aireplay-ng -0 1 -a 08:86:3B:F3:CC:AC wlan0", puts);
 
 		var connect = networkInterfaces.content.connect;
 		connect = connect.replace("{ssid}", credentials.ssid);
@@ -125,11 +120,25 @@ var initServer = function() {
 
 	}
 
+	var networks = function(request, reply) {
+		exec("iwlist scan", function (error, stdout, stderr) { 
+			var networks = {parseIwlist(stdout)}
+			console.log(prettyjson.render(networks));
+			reply(networks).code(200);
+		});
+	}
+
 	server.route([
 		{ method: 'GET', path: '/{path*}', handler: {
 		        directory: { path: './public/', listing: true, index: true }
 		    }
-		},{ method: 'POST', path: '/connect', handler: connect }
+		},{ method: 'POST', path: '/connect', handler: connect 
+		},{ method: 'GET', path: '/ping', handler: function(request, reply){
+				reply('pong');
+			}
+		},{
+			method: 'GET', path: '/networks', handler: networks
+		}
 	]);
 	console.log("init routes");
 
