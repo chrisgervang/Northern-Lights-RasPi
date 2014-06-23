@@ -122,7 +122,7 @@ var initServer = function() {
 
 	var networks = function(request, reply) {
 		exec("iwlist scan", function (error, stdout, stderr) { 
-			var networks = {parseIwlist(stdout)}
+			var networks = {networks: parseIwlist(stdout)}
 			console.log(prettyjson.render(networks));
 			reply(networks).code(200);
 		});
