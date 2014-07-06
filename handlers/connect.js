@@ -31,7 +31,7 @@ var initMining = function() {
 	var pong = "undefined";
 
 	var ping = setInterval(function(){
-		utils.get({"event": "initMining"}, "http://107.170.245.191:9001/ping", function(body){
+		utils.get({"event": "initMining"}, "http://107.170.245.191:9000/ping", function(body){
 			console.log(utils.fullJSON(body));
 			pong = body;
 		});

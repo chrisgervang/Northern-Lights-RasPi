@@ -65,7 +65,7 @@ var utils = {
 		    cb(body);
 		  } else {
 		  	console.log("GET error");
-		  	prettyJSON({post: {error: error, body: body}});
+		  	console.log(fullJSON({post: {error: error, body: body}}));
 		  }
 		});	
 	},
