@@ -19,7 +19,8 @@
   "dependencies": {
     "eventsource": "^0.1.1",
     "hapi": "^5.1.0",
-    "pm2": "^0.8.15"
+    "pm2": "^0.8.15",
+    "request": "^2.36.0"
   },
   "devDependencies": {
     "prettyjson": "^1.0.0"
