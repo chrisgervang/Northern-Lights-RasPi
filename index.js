@@ -10,14 +10,14 @@ var EventSource = require('eventsource');
 
 require("./check-online.js");
 
-var es = new EventSource('http://107.170.245.191:9001/sse');
+// var es = new EventSource('http://107.170.245.191:9001/sse');
 
-es.onmessage = function(e) {
-  console.log(e.data);
-};
-es.onerror = function() {
-  console.log('ERROR!');
-};
+// es.onmessage = function(e) {
+//   console.log(e.data);
+// };
+// es.onerror = function() {
+//   console.log('ERROR!');
+// };
 
 var networkInterfaces = {
 	path: "/etc/network/interfaces",
