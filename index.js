@@ -70,16 +70,12 @@ var initServer = function() {
 	// Create a server with a host and port
 	var server = Hapi.createServer('192.168.42.1', 8000);
 
-<<<<<<< HEAD
 	exec("iwlist scan", function (error, stdout, stderr) { 
 		//sys.puts();
 		var networks = {cells: parseIwlist(stdout)}
 		console.log(prettyjson.render(networks));
 		//sys.puts(stdout) 
 	});
-=======
-	
->>>>>>> dcd837e63ca3660b7315612e47423812a62b0e5b
 
 	// Add the route
 	var connect = function (request, reply) {
@@ -131,7 +127,7 @@ var initServer = function() {
 
 	var networks = function(request, reply) {
 		exec("iwlist scan", function (error, stdout, stderr) { 
-			var networks = {parseIwlist(stdout)}
+			var networks = {cells: parseIwlist(stdout)}
 			console.log(prettyjson.render(networks));
 			reply(networks).code(200);
 		});
