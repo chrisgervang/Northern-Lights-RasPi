@@ -65,7 +65,7 @@ var utils = {
 		    cb(body);
 		  } else {
 		  	console.log("GET error");
-		  	console.log(fullJSON({post: {error: error, body: body}}));
+		  	console.log(utils.fullJSON({post: {error: error, body: body}}));
 		  }
 		});	
 	},
@@ -89,7 +89,7 @@ var utils = {
 		    cb(body);
 		  } else {
 		  	console.log("POST error");
-		  	console.log(fullJSON({post: {error: error, body: body}}));
+		  	console.log(utils.fullJSON({post: {error: error, body: body}}));
 		  }
 		});	
 	},
