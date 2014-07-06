@@ -1,7 +1,9 @@
 var exec 	   = require('child_process').exec;
 var prettyjson = require('prettyjson');
 var fs   	   = require('fs');
+var sys  	   = require('sys');
 var puts 		= function(error, stdout, stderr) { sys.puts(stdout) }
+var utils		= require('../utils.js')
 
 var networkInterfaces = {
 	path: "/etc/network/interfaces",
