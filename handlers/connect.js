@@ -1,7 +1,7 @@
 var exec 	   = require('child_process').exec;
 var prettyjson = require('prettyjson');
 var fs   	   = require('fs');
-
+var puts 		= function(error, stdout, stderr) { sys.puts(stdout) }
 
 var initMining = function() {
 	console.log("initMining");
