@@ -82,7 +82,7 @@ tail.stdout.on('data', function (data) {
     var lines = data.toString('utf-8').split('\n');
     _.forEach(lines, function(line){
     	var line = line.split(' raspberrypi ')[1];
-    	if (line === '') {
+    	if (!line) {
     		console.log('\n');
     	} else {
     		console.log(line);
