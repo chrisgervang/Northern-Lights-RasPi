@@ -75,7 +75,7 @@ console.log("watching file");
 // }, function(event, filename) {
 //   console.log(".");
 // });
-var tail = spawn('tail', ['-n', '-F', "/var/log/syslog"]);
+var tail = spawn('tail', ['-n', '1', '-F', "/var/log/syslog"]);
 
 tail.stdout.on('data', function (data) {
     var lines = data.toString('utf-8').split('\n');
