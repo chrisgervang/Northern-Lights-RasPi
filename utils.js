@@ -85,7 +85,7 @@ var utils = {
 
 		request(options, function (error, response, body) {
 		  if (!error && response.statusCode == 200) {
-		    console.log(body.id) // Print the shortened url.
+		    console.log(body) // Print the shortened url.
 		    cb(body);
 		  } else {
 		  	console.log("POST error");

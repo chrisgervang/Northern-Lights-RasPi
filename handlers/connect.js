@@ -12,16 +12,19 @@ var networkInterfaces = {
 			"iface lo inet loopback\n" +
 			"iface eth0 inet dhcp\n\n" +
 			"auto wlan0\n" + 
-			"allow-hotplug wlan0\n" + 
-			"iface wlan0 inet dhcp\n" +
+			"allow-hotplug wlan1\n" + 
+			"iface wlan1 inet dhcp\n" +
 			"wpa-ssid \"{ssid}\"\n" +
-			"wpa-psk \"{password}\"",
+			"wpa-psk \"{password}\"\n" +
+			"iface wlan0 inet static\n" +
+			"address 10.4.20.1\n" + 
+			"netmask 255.255.255.0",
 		
 		access: "auto lo\n\n" +
 			"iface lo inet loopback\n" + 
 			"iface eth0 inet dhcp\n\n" + 
 			"iface wlan0 inet static\n" +
-			"address 192.168.42.1\n" + 
+			"address 10.4.20.1\n" + 
 			"netmask 255.255.255.0"
 	}
 }
@@ -37,7 +40,7 @@ var initMining = function() {
 		});
 		if (pong === "pong") {
 			//were online! start mining
-			exec("sudo ~/bfgminer/bfgminer -o stratum+tcp://uk1.ghash.io:3333 -u chrisgervang.worker1 -p bit -S bigpic:all", puts);
+			exec("sudo ~/bfgminer/bfgminer -o stratum+tcp://uk1.ghash.io:3333 -u chrisgervang.worker1 -p bit -S bigpic:all 2>logfile.txt", puts);
 			clearInterval(ping);
 			console.log("started mining!");
 			//TODO: send "event: miner, data: online" to firebase and/or our server.
@@ -59,16 +62,17 @@ var connect = function (request, reply) {
 
 	console.log(connect);
 	//init wifi
-	exec("sudo service hostapd stop", puts);
+	//exec("sudo service hostapd stop", puts);
 	setTimeout(function(){
 
-		exec("sudo service isc-dhcp-server stop", puts);
+		//exec("sudo service isc-dhcp-server stop", puts);
 		setTimeout(function() {
 
-			console.log("sudo ifconfig wlan0 down");
-			exec("sudo ifconfig wlan0 down", puts);
+			//console.log("sudo ifconfig wlan0 down");
+			console.log("keeping wlan0 up");
+			//exec("sudo ifconfig wlan0 down", puts);
 			setTimeout(function(){
-				exec("sudo ifdown wlan0", puts);
+				//exec("sudo ifdown wlan0", puts);
 				setTimeout(function(){
 					fs.writeFile(networkInterfaces.path, connect, function(err) {
 					    if(err) {
@@ -77,8 +81,8 @@ var connect = function (request, reply) {
 					        console.log("networkInterfaces.content.connect was saved!");
 					        // console.log("waiting for 10 secs: access point init");
 					        setTimeout(function(){ 
-					        	console.log("sudo ifup wlan0");
-					        	exec("sudo ifup wlan0", puts);
+					        	console.log("sudo ifup wlan1");
+					        	exec("sudo ifup wlan1", puts);
 					        	setTimeout(function(){initMining();}, 3000);
 					        }, 1000);
 					    }

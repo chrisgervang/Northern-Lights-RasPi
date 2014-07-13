@@ -19,6 +19,7 @@
   "dependencies": {
     "eventsource": "^0.1.1",
     "hapi": "^5.1.0",
+    "pi-gpio": "0.0.5",
     "pm2": "^0.8.15",
     "request": "^2.36.0"
   },

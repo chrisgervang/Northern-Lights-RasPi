@@ -10,15 +10,6 @@ var EventSource = require('eventsource');
 
 require("./check-online.js");
 
-// var es = new EventSource('http://107.170.245.191:9001/sse');
-
-// es.onmessage = function(e) {
-//   console.log(e.data);
-// };
-// es.onerror = function() {
-//   console.log('ERROR!');
-// };
-
 var networkInterfaces = {
 	path: "/etc/network/interfaces",
 	content: {
@@ -26,16 +17,19 @@ var networkInterfaces = {
 			"iface lo inet loopback\n" +
 			"iface eth0 inet dhcp\n\n" +
 			"auto wlan0\n" + 
-			"allow-hotplug wlan0\n" + 
-			"iface wlan0 inet dhcp\n" +
+			"allow-hotplug wlan1\n" + 
+			"iface wlan1 inet dhcp\n" +
 			"wpa-ssid \"{ssid}\"\n" +
-			"wpa-psk \"{password}\"",
+			"wpa-psk \"{password}\"\n" +
+			"iface wlan0 inet static\n" +
+			"address 10.4.20.1\n" + 
+			"netmask 255.255.255.0",
 		
 		access: "auto lo\n\n" +
 			"iface lo inet loopback\n" + 
 			"iface eth0 inet dhcp\n\n" + 
 			"iface wlan0 inet static\n" +
-			"address 192.168.42.1\n" + 
+			"address 10.4.20.1\n" + 
 			"netmask 255.255.255.0"
 	}
 }
@@ -43,12 +37,15 @@ var networkInterfaces = {
 
 
 exec("sudo ifconfig wlan0 down", puts);
+exec("sudo ifconfig wlan1 down", puts);
 setTimeout(function(){initAccess()}, 1000);
 
 var initAccess = function() {
 	//init access point
 	console.log("sudo ifdown wlan0");
 	exec("sudo ifdown wlan0", puts);
+	console.log("sudo ifdown wlan1");
+	exec("sudo ifdown wlan1", puts);
 	console.log("writing file");
 	setTimeout(function(){
 		fs.writeFile(networkInterfaces.path, networkInterfaces.content.access, function(err) {
@@ -56,7 +53,7 @@ var initAccess = function() {
 		        console.log(err);
 		    } else {
 		        console.log("networkInterfaces.content.access was saved!");
-		        exec("ifconfig wlan0 192.168.42.1", puts);
+		        exec("ifconfig wlan0 10.4.20.1", puts);
 		        setTimeout(function(){
 		        	exec("sudo service isc-dhcp-server start", puts);
 			        setTimeout(function(){
@@ -81,7 +78,7 @@ fs.watch("/var/log/syslog", {
 var initServer = function() {
 	console.log("init server");
 	// Create a server with a host and port
-	var server = Hapi.createServer('192.168.42.1', 8000);
+	var server = Hapi.createServer('10.4.20.1', 8000);
 
 	server.route([
 		{ method: 'GET', path: '/{path*}', handler: {
