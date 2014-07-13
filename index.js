@@ -81,7 +81,6 @@ var tail = spawn('tail', ['-n', '1', '-F', "/var/log/syslog"]);
 tail.stdout.on('data', function (data) {
     var lines = data.toString('utf-8').split('\n');
     _.forEach(lines, function(line){
-    	console.log(line.split(' raspberrypi '));
     	var line = line.split(' raspberrypi ')[1];
     	console.log(line);   
     })
