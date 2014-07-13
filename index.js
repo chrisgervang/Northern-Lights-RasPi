@@ -2,6 +2,7 @@ var Hapi 	   = require('hapi');
 var sys  	   = require('sys');
 var fs   	   = require('fs');
 var exec 	   = require('child_process').exec;
+var spawn	   = require('child_process').spawn;
 var prettyjson = require('prettyjson');
 var connect    = require('./handlers/connect.js');
 var networks   = require('./handlers/networks.js');
@@ -69,11 +70,22 @@ var initAccess = function() {
 
 
 console.log("watching file");
-fs.watch("/var/log/syslog", {
-  persistent: true
-}, function(event, filename) {
-  console.log(".");
+// fs.watch("/var/log/syslog", {
+//   persistent: true
+// }, function(event, filename) {
+//   console.log(".");
+// });
+var tail = spawn('tail', ['-n', '-F', "/var/log/syslog"]);
+
+tail.stdout.on('data', function (data) {
+    var lines = data.toString('utf-8').split('\n');
+ 	console.log(lines);   
 });
+
+process.on('exit', function () {
+    tail.kill();
+});
+
 
 var initServer = function() {
 	console.log("init server");
