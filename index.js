@@ -8,6 +8,7 @@ var connect    = require('./handlers/connect.js');
 var networks   = require('./handlers/networks.js');
 var puts 		= function(error, stdout, stderr) { sys.puts(stdout) }
 var EventSource = require('eventsource');
+var _ 			= require('lodash');
 
 require("./check-online.js");
 
