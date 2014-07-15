@@ -40,7 +40,7 @@ var networkInterfaces = {
 
 exec("sudo ifconfig wlan0 down", puts);
 exec("sudo ifconfig wlan1 down", puts);
-setTimeout(function(){initAccess()}, 1000);
+setTimeout(function(){initAccess()}, 1500);
 
 var initAccess = function() {
 	//init access point
@@ -55,7 +55,7 @@ var initAccess = function() {
 		        console.log(err);
 		    } else {
 		        console.log("networkInterfaces.content.access was saved!");
-		        exec("ifconfig wlan0 10.4.20.1", puts);
+		        exec("sudo ifconfig wlan0 10.4.20.1", puts);
 		        setTimeout(function(){
 		        	exec("sudo service isc-dhcp-server start", puts);
 			        setTimeout(function(){
