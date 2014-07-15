@@ -1,11 +1,13 @@
-echo("running to /home/pi")
+#!/bin/sh
+
+echo "running to /home/pi"
 cd /home/pi
 
-echo("download node")
+echo "download node"
 wget http://nodejs.org/dist/v0.10.26/node-v0.10.26-linux-arm-pi.tar.gz
-echo("unzip node")
+echo "unzip node"
 tar -xvzf /home/pi/node-v0.10.26-linux-arm-pi.tar.gz
-echo("test node")
+echo "test node"
 /home/pi/node-v0.10.26-linux-arm-pi/bin/node —version
 
 # sudo nano /etc/profile
@@ -17,23 +19,23 @@ echo("test node")
 # rebooted pi 6/6
 # node worked! 6/6
 
-echo("Changed name of node folder in home dir to \"node\"")
+echo "Changed name of node folder in home dir to \"node\""
 mv /home/pi/node-v0.10.26-linux-arm-pi /home/pi/node
-echo("moving /home/pi/node to /usr/sbin where scripts that require super-user access go")
+echo "moving /home/pi/node to /usr/sbin where scripts that require super-user access go"
 # moved node to /bin/sbin/nodejs 6/12
 mv /home/pi/node /usr/sbin/nodejs
 
-echo("install dhcp and hostapd")
+echo "install dhcp and hostapd"
 apt-get install hostapd isc-dhcp-server
 
 
-echo("remove load at boot:") 
+echo "remove load at boot:" 
 update-rc.d -f isc-dhcp-server remove
 update-rc.d -f hostapd remove
 
-echo("made proper node link:") 
+echo "made proper node link:" 
 ln -s /usr/sbin/nodejs/bin/node /usr/sbin/node
-echo("made proper npm link:") 
+echo "made proper npm link:" 
 ln -s /usr/sbin/nodejs/bin/npm /usr/sbin/npm
 
 # still need to configure /etc/network/interfaces
@@ -62,21 +64,21 @@ ln -s /usr/sbin/nodejs/bin/npm /usr/sbin/npm
 # 
 # still need to configure and install pm2
 # sudo npm install -g pm2
-# (in directory of index.js) pm2 startup debian
+#  in directory of index.js pm2 startup debian
 # 
 # git clone https://github.com/chrisgervang/NL-Pi.git
 
-echo("install bfgminer dependencies")
+echo "install bfgminer dependencies"
 apt-get install autoconf libtool libncurses-dev yasm curl libcurl4-openssl-dev libjansson-dev pkg-config libudev-dev uthash-dev libevent-dev
 
-echo("install bfgminer")
+echo "install bfgminer"
 git clone https://github.com/luke-jr/bfgminer.git
-echo("moving into bfgminer")
+echo "moving into bfgminer"
 cd ./bfgminer
 ./autogen.sh
 ./configure
 make
-echo("moving to home")
+echo "moving to home"
 cd /home/pi
 
 # uncomment when feeling ready
