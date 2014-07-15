@@ -70,9 +70,13 @@ var connect = function (request, reply) {
 
 			//console.log("sudo ifconfig wlan0 down");
 			console.log("keeping wlan0 up");
+			console.log("*killing wlan1");
 			//exec("sudo ifconfig wlan0 down", puts);
+			exec("sudo ifconfig wlan1 down", puts);
 			setTimeout(function(){
 				//exec("sudo ifdown wlan0", puts);
+				exec("sudo ifdown wlan1", puts);
+				
 				setTimeout(function(){
 					fs.writeFile(networkInterfaces.path, connect, function(err) {
 					    if(err) {
