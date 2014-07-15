@@ -1,0 +1,94 @@
+echo("running to /home/pi")
+cd /home/pi
+
+echo("download node")
+wget http://nodejs.org/dist/v0.10.26/node-v0.10.26-linux-arm-pi.tar.gz
+echo("unzip node")
+tar -xvzf /home/pi/node-v0.10.26-linux-arm-pi.tar.gz
+echo("test node")
+/home/pi/node-v0.10.26-linux-arm-pi/bin/node —version
+
+# sudo nano /etc/profile
+# added {
+#      NODE_JS_HOME=/usr/sbin/nodejs
+#      PATH=$PATH:$NODE_JS_HOME/bin
+# } 6/6 
+
+# rebooted pi 6/6
+# node worked! 6/6
+
+echo("Changed name of node folder in home dir to \"node\"")
+mv /home/pi/node-v0.10.26-linux-arm-pi /home/pi/node
+echo("moving /home/pi/node to /usr/sbin where scripts that require super-user access go")
+# moved node to /bin/sbin/nodejs 6/12
+mv /home/pi/node /usr/sbin/nodejs
+
+echo("install dhcp and hostapd")
+apt-get install hostapd isc-dhcp-server
+
+
+echo("remove load at boot:") 
+update-rc.d -f isc-dhcp-server remove
+update-rc.d -f hostapd remove
+
+echo("made proper node link:") 
+ln -s /usr/sbin/nodejs/bin/node /usr/sbin/node
+echo("made proper npm link:") 
+ln -s /usr/sbin/nodejs/bin/npm /usr/sbin/npm
+
+# still need to configure /etc/network/interfaces
+# still need to configure /etc/default/hostapd
+# 
+# interface=wlan0
+# driver=rtl871xdrv
+# ssid=Quarry 53s65e
+# hw_mode=g
+# channel=6
+# macaddr_acl=0
+# auth_algs=1
+# ignore_broadcast_ssid=0
+# 
+# still need to configure /etc/dhcp/dhcpd.conf
+# 
+# subnet 10.4.20.0 netmask 255.255.255.0 {
+# range 10.4.20.10 10.4.20.50;
+# option broadcast-address 10.4.20.255;
+# option routers 10.4.20.1;
+# default-lease-time 600;
+# max-lease-time 7200;
+# option domain-name "miner.quarry";
+# option domain-name-servers 8.8.8.8, 8.8.4.4;
+# }
+# 
+# still need to configure and install pm2
+# sudo npm install -g pm2
+# (in directory of index.js) pm2 startup debian
+# 
+# git clone https://github.com/chrisgervang/NL-Pi.git
+
+echo("install bfgminer dependencies")
+apt-get install autoconf libtool libncurses-dev yasm curl libcurl4-openssl-dev libjansson-dev pkg-config libudev-dev uthash-dev libevent-dev
+
+echo("install bfgminer")
+git clone https://github.com/luke-jr/bfgminer.git
+echo("moving into bfgminer")
+cd ./bfgminer
+./autogen.sh
+./configure
+make
+echo("moving to home")
+cd /home/pi
+
+# uncomment when feeling ready
+# git clone git://github.com/quick2wire/quick2wire-gpio-admin.git
+# cd quick2wire-gpio-admin
+# make
+# sudo make install
+# sudo adduser $USER gpio
+
+# sudo nano /lib/udev/rules.d/75-persistent-net-generator.rules 7/12
+# added alan*[0-9]| {
+#      # device name whitelist
+#      KERNEL!="wlan*[0-9]|ath*|msh*|ra*|sta*|ctc*|lcs*|hsi*", \
+#      GOTO=“persistent_net_generator_end”
+# } 7/12 worked!
