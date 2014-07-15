@@ -8,7 +8,7 @@ wget http://nodejs.org/dist/v0.10.26/node-v0.10.26-linux-arm-pi.tar.gz
 echo "unzip node"
 tar -xvzf /home/pi/node-v0.10.26-linux-arm-pi.tar.gz
 echo "test node"
-/home/pi/node-v0.10.26-linux-arm-pi/bin/node —version
+/home/pi/node-v0.10.26-linux-arm-pi/bin/node --version
 
 # sudo nano /etc/profile
 # added {

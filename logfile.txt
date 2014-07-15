@@ -1,0 +1,422 @@
+ [2014-07-15 15:20:20] Started bfgminer 4.4.0-32-gac4e9b3
+ [2014-07-15 15:20:21] Found BPM 0 at /dev/ttyACM0
+ [2014-07-15 15:20:21] Probing for an alive pool
+ [2014-07-15 15:20:21] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:20:21] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:20:22] Stratum authorisation success for pool 0
+ [2014-07-15 15:20:22] Pool 0 stratum+tcp://uk1.ghash.io:3333 alive
+ [2014-07-15 15:20:22] Network difficulty changed to 17.3G (124.1P)
+ [2014-07-15 15:20:22] New block: ...67902095 #310904 diff 17.3G (124.1P)
+ [2014-07-15 15:20:22] Stratum from pool 0 detected new block
+ [2014-07-15 15:20:22] BPM 0: Opened /dev/ttyACM0
+ [2014-07-15 15:20:25] New best share: 1
+ [2014-07-15 15:20:27] New best share: 1
+ [2014-07-15 15:20:36] New best share: 28
+ [2014-07-15 15:20:42] 20s: 0.67 avg: 1.74 u: 1.29 Gh/s | A:0 R:0+0(none) HW:25/ 81%
+ [2014-07-15 15:20:49] Pool 0 is hiding block contents from us
+ [2014-07-15 15:21:03] 20s: 1.50 avg: 2.27 u: 1.27 Gh/s | A:0 R:0+0(none) HW:28/ 70%
+ [2014-07-15 15:21:08] New block: ...ff405e81 #310905 diff 17.3G (124.1P)
+ [2014-07-15 15:21:08] Stratum from pool 0 detected new block
+ [2014-07-15 15:21:23] 20s: 1.78 avg: 2.25 u: 1.98 Gh/s | A:0 R:0+0(none) HW:28/ 50%
+ [2014-07-15 15:21:43] 20s: 1.95 avg: 2.24 u: 1.97 Gh/s | A:0 R:0+0(none) HW:28/ 43%
+ [2014-07-15 15:22:03] 20s: 2.05 avg: 2.24 u: 1.92 Gh/s | A:0 R:0+0(none) HW:30/ 40%
+ [2014-07-15 15:22:03] New best share: 55
+ [2014-07-15 15:22:22] New best share: 795
+ [2014-07-15 15:22:23] 20s: 2.36 avg: 2.34 u: 2.06 Gh/s | A:0 R:0+0(none) HW:32/ 36%
+ [2014-07-15 15:22:43] 20s: 2.37 avg: 2.34 u: 2.05 Gh/s | A:0 R:0+0(none) HW:32/ 32%
+ [2014-07-15 15:23:03] 20s: 2.31 avg: 2.33 u: 2.06 Gh/s | A:0 R:0+0(none) HW:32/ 29%
+ [2014-07-15 15:23:23] 20s: 2.33 avg: 2.33 u: 1.95 Gh/s | A:0 R:0+0(none) HW:32/ 28%
+ [2014-07-15 15:23:27] New block: ...3e55c5c6 #310906 diff 17.3G (124.1P)
+ [2014-07-15 15:23:27] Stratum from pool 0 detected new block
+ [2014-07-15 15:23:43] 20s: 2.35 avg: 2.34 u: 1.93 Gh/s | A:0 R:0+0(none) HW:32/ 26%
+ [2014-07-15 15:24:03] 20s: 2.36 avg: 2.34 u: 1.96 Gh/s | A:0 R:0+0(none) HW:33/ 25%
+ [2014-07-15 15:24:23] 20s: 2.37 avg: 2.34 u: 1.96 Gh/s | A:0 R:0+0(none) HW:33/ 23%
+ [2014-07-15 15:24:43] Closing socket for stratum pool 0
+ [2014-07-15 15:24:43] Stratum connection to pool 0 interrupted
+ [2014-07-15 15:24:43] Pool 0 stratum+tcp://uk1.ghash.io:3333 not responding!
+ [2014-07-15 15:24:43] 20s: 2.37 avg: 2.35 u: 1.88 Gh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:25:03] 20s: 1.45 avg: 2.18 u: 1.74 Gh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:25:23] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:25:23] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:25:23] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:25:23] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:25:23] 20s: 0.89 avg: 2.03 u: 1.63 Gh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:25:43] 20s: 0.54 avg: 1.91 u: 1.53 Gh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:26:03] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:26:03] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:26:03] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:26:03] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:26:03] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:26:03] 20s: 0.33 avg: 1.79 u: 1.44 Gh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:26:23] 20s: 0.20 avg: 1.70 u: 1.36 Gh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:26:43] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:26:43] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:26:43] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:26:43] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:26:43] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:26:43] 20s: 0.13 avg: 1.61 u: 1.28 Gh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:27:03] 20s: 0.08 avg: 1.53 u: 1.22 Gh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:27:23] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:27:23] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:27:23] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:27:23] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:27:23] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:27:24] 20s: 0.05 avg: 1.45 u: 1.16 Gh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:27:44] 20s: 0.03 avg: 1.39 u: 1.11 Gh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:28:03] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:28:03] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:28:03] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:28:03] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:28:04] 20s: 0.02 avg: 1.33 u: 1.06 Gh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:28:24] 20s: 0.01 avg: 1.27 u: 1.02 Gh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:28:43] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:28:43] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:28:43] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:28:43] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:28:43] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:28:44] 20s: 0.01 avg: 1.22 u: 0.98 Gh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:29:04] 20s: 0.00 avg: 1.17 u: 0.94 Gh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:29:23] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:29:23] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:29:23] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:29:23] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:29:23] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:29:24] 20s: 0.00 avg: 1.13 u: 0.90 Gh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:29:44] 20s: 0.00 avg: 1.09 u: 0.87 Gh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:30:03] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:30:03] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:30:03] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:30:03] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:30:03] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:30:04] 20s: 0.00 avg: 1.05 u: 0.84 Gh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:30:24] 20s: 0.00 avg: 1.02 u: 0.81 Gh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:30:43] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:30:43] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:30:43] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:30:43] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:30:44] 20s: 0.35 avg:984.4 u:787.6 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:31:04] 20s: 0.21 avg:953.7 u:763.0 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:31:23] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:31:23] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:31:23] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:31:23] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:31:23] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:31:24] 20s: 0.13 avg:924.8 u:739.9 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:31:44] 20s: 0.08 avg:897.7 u:718.2 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:32:03] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:32:03] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:32:03] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:32:03] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:32:03] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:32:04] 20s: 0.05 avg:872.1 u:697.7 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:32:24] 20s: 0.03 avg:847.9 u:678.4 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:32:44] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:32:44] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:32:44] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:32:44] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:32:44] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:32:44] 20s: 0.02 avg:825.0 u:660.1 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:33:04] 20s: 0.01 avg:803.3 u:642.7 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:33:24] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:33:24] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:33:24] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:33:24] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:33:24] 20s: 0.01 avg:782.8 u:626.3 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:33:44] 20s: 0.00 avg:763.2 u:610.6 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:34:04] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:34:04] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:34:04] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:34:04] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:34:04] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:34:04] 20s: 0.00 avg:744.7 u:595.8 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:34:24] 20s: 0.00 avg:726.9 u:581.6 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:34:44] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:34:44] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:34:44] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:34:44] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:34:44] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:34:44] 20s: 0.00 avg:710.1 u:568.1 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:35:04] 20s: 0.00 avg:693.9 u:555.2 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:35:24] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:35:24] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:35:24] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:35:24] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:35:24] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:35:24] 20s: 0.00 avg:678.5 u:542.9 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:35:44] 20s: 0.00 avg:663.8 u:531.1 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:36:04] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:36:04] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:36:04] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:36:04] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:36:04] 20s: 0.00 avg:649.7 u:519.8 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:36:24] 20s: 0.00 avg:636.2 u:509.0 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:36:44] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:36:44] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:36:44] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:36:44] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:36:44] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:36:44] 20s: 0.00 avg:623.2 u:498.6 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:37:04] 20s: 0.00 avg:610.8 u:488.7 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:37:24] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:37:24] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:37:24] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:37:24] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:37:24] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:37:24] 20s: 0.00 avg:598.8 u:479.1 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:37:44] 20s: 0.00 avg:587.3 u:469.9 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:38:04] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:38:04] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:38:04] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:38:04] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:38:04] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:38:04] 20s: 0.00 avg:576.2 u:461.0 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:38:24] 20s: 0.00 avg:565.6 u:452.5 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:38:44] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:38:44] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:38:44] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:38:44] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:38:44] 20s: 0.00 avg:555.3 u:444.3 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:39:04] 20s: 0.00 avg:545.4 u:436.4 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:39:24] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:39:24] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:39:24] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:39:24] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:39:24] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:39:24] 20s: 0.00 avg:535.8 u:428.7 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:39:44] 20s: 0.00 avg:526.6 u:421.3 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:40:04] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:40:04] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:40:04] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:40:04] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:40:04] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:40:04] 20s: 0.00 avg:517.7 u:414.2 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:40:24] 20s: 0.00 avg:509.1 u:407.3 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:40:44] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:40:44] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:40:44] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:40:44] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:40:44] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:40:44] 20s: 0.00 avg:500.7 u:400.6 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:41:04] 20s: 0.00 avg:492.7 u:394.2 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:41:24] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:41:24] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:41:24] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:41:24] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:41:25] 20s: 0.00 avg:484.9 u:387.9 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:41:45] 20s: 0.00 avg:477.3 u:381.9 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:42:04] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:42:04] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:42:04] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:42:04] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:42:04] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:42:05] 20s: 0.00 avg:470.0 u:376.0 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:42:25] 20s: 0.00 avg:462.8 u:370.3 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:42:44] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:42:44] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:42:44] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:42:44] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:42:44] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:42:45] 20s: 0.00 avg:455.9 u:364.8 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:43:05] 20s: 0.00 avg:449.2 u:359.4 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:43:24] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:43:24] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:43:24] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:43:24] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:43:24] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:43:25] 20s: 0.00 avg:442.7 u:354.2 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:43:45] 20s: 0.00 avg:436.4 u:349.1 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:44:04] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:44:04] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:44:04] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:44:04] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:44:05] 20s: 0.00 avg:430.3 u:344.2 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:44:25] 20s: 0.00 avg:424.3 u:339.5 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:44:44] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:44:44] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:44:44] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:44:44] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:44:44] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:44:45] 20s: 0.00 avg:418.5 u:334.8 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:45:05] 20s: 0.00 avg:412.8 u:330.3 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:45:24] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:45:24] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:45:24] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:45:24] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:45:24] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:45:25] 20s: 0.00 avg:407.3 u:325.9 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:45:45] 20s: 0.00 avg:402.0 u:321.6 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:46:04] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:46:04] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:46:04] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:46:04] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:46:04] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:46:05] 20s: 0.00 avg:396.8 u:317.4 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:46:25] 20s: 0.00 avg:391.7 u:313.4 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:46:44] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:46:44] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:46:44] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:46:44] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:46:45] 20s: 0.00 avg:386.7 u:309.4 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:47:05] 20s: 0.00 avg:381.9 u:305.5 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:47:24] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:47:24] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:47:24] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:47:24] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:47:24] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:47:25] 20s: 0.00 avg:377.2 u:301.8 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:47:45] 20s: 0.00 avg:372.6 u:298.1 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:48:05] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:48:05] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:48:05] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:48:05] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:48:05] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:48:05] 20s: 0.00 avg:368.1 u:294.5 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:48:25] 20s: 0.00 avg:363.7 u:291.0 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:48:45] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:48:45] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:48:45] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:48:45] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:48:45] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:48:45] 20s: 0.00 avg:359.4 u:287.6 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:49:05] 20s: 0.00 avg:355.3 u:284.2 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:49:25] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:49:25] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:49:25] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:49:25] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:49:25] 20s: 0.00 avg:351.2 u:281.0 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:49:45] 20s: 0.00 avg:347.2 u:277.8 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:50:05] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:50:05] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:50:05] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:50:05] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:50:05] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:50:05] 20s: 0.00 avg:343.3 u:274.7 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:50:25] 20s: 0.00 avg:339.5 u:271.6 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:50:45] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:50:45] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:50:45] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:50:45] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:50:45] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:50:45] 20s: 0.00 avg:335.8 u:268.6 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:51:05] 20s: 0.00 avg:332.1 u:265.7 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:51:25] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:51:25] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:51:25] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:51:25] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:51:25] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:51:25] 20s: 0.00 avg:328.5 u:262.9 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:51:45] 20s: 0.00 avg:325.1 u:260.1 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:52:05] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:52:05] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:52:05] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:52:05] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:52:05] 20s: 0.00 avg:321.6 u:257.3 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:52:25] 20s: 0.00 avg:318.3 u:254.7 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:52:45] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:52:45] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:52:45] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:52:45] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:52:45] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:52:45] 20s: 0.00 avg:315.0 u:252.0 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:53:05] 20s: 0.00 avg:311.8 u:249.5 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:53:25] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:53:25] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:53:25] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:53:25] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:53:25] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:53:25] 20s: 0.00 avg:308.6 u:246.9 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:53:45] 20s: 0.00 avg:305.6 u:244.5 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:54:05] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:54:05] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:54:05] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:54:05] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:54:05] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:54:05] 20s: 0.00 avg:302.5 u:242.1 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:54:25] 20s: 0.00 avg:299.6 u:239.7 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:54:45] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:54:45] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:54:45] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:54:45] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:54:45] 20s: 0.00 avg:296.7 u:237.4 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:55:05] 20s: 0.00 avg:293.8 u:235.1 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:55:25] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:55:25] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:55:25] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:55:25] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:55:25] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:55:25] 20s: 0.00 avg:291.0 u:232.8 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:55:45] 20s: 0.00 avg:288.3 u:230.6 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:56:05] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:56:05] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:56:05] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:56:05] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:56:05] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:56:05] 20s: 0.00 avg:285.6 u:228.5 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:56:25] 20s: 0.00 avg:282.9 u:226.4 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:56:45] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:56:45] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:56:45] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:56:45] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:56:45] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:56:45] 20s: 0.00 avg:280.3 u:224.3 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:57:05] 20s: 0.00 avg:277.8 u:222.3 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:57:25] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:57:25] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:57:25] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:57:25] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:57:25] 20s: 0.00 avg:275.3 u:220.3 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:57:45] 20s: 0.00 avg:272.8 u:218.3 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:58:05] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:58:05] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:58:05] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:58:05] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:58:05] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:58:05] 20s: 0.00 avg:270.4 u:216.4 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:58:25] 20s: 0.00 avg:268.1 u:214.5 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:58:45] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:58:45] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:58:45] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:58:45] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:58:45] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:58:45] 20s: 0.00 avg:265.7 u:212.6 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:59:05] 20s: 0.00 avg:263.4 u:210.8 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:59:25] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 15:59:25] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 15:59:25] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 15:59:25] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:59:25] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 15:59:25] 20s: 0.00 avg:261.2 u:209.0 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 15:59:45] 20s: 0.00 avg:259.0 u:207.2 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 16:00:05] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 16:00:05] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 16:00:05] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 16:00:05] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 16:00:05] 20s: 0.00 avg:256.8 u:205.5 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 16:00:25] 20s: 0.00 avg:254.7 u:203.7 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 16:00:45] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 16:00:46] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 16:00:46] 20s: 0.00 avg:252.6 u:202.1 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 16:00:46] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 16:00:46] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 16:00:46] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 16:01:06] 20s: 0.00 avg:250.5 u:200.4 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 16:01:26] 20s: 0.00 avg:248.4 u:198.8 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 16:01:26] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 16:01:26] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 16:01:26] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 16:01:26] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 16:01:26] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 16:01:46] 20s: 0.00 avg:246.4 u:197.2 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 16:02:06] 20s: 0.00 avg:244.5 u:195.6 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 16:02:06] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 16:02:06] Pool 0 slow/down or URL or credentials invalid
+ [2014-07-15 16:02:06] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 16:02:06] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 16:02:06] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 16:02:26] 20s: 0.00 avg:242.5 u:194.0 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 16:02:46] Stratum connect failed to pool 0: Couldn't resolve host 'uk1.ghash.io'
+ [2014-07-15 16:02:46] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-15 16:02:46] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 16:02:46] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-15 16:02:46] 20s: 0.00 avg:240.6 u:192.5 Mh/s | A:0 R:0+0(none) HW:36/ 24%
+ [2014-07-15 16:03:05] Received kill message
