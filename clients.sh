@@ -10,24 +10,24 @@ service hostapd stop
 service isc-dhcp-server stop
 
 echo "auto lo" > /etc/network/interfaces
-echo -e "\n" >> /etc/network/interfaces
-echo -e "iface lo inet loopback" >> /etc/network/interfaces
-echo -e "iface eth0 inet dhcp" >> /etc/network/interfaces
-echo -e "\n" >> /etc/network/interfaces
-echo -e "auto wlan1" >> /etc/network/interfaces
-echo -e "allow-hotplug wlan1" >> /etc/network/interfaces
-echo -e "iface wlan1 inet dhcp" >> /etc/network/interfaces
-echo -e "wpa-ssid \"Gervang Wireless\"" >> /etc/network/interfaces
-echo -e "wpa-psk \"cocoapunch\"" >> /etc/network/interfaces
-echo -e "\n" >> /etc/network/interfaces
-echo -e "auto wlan2" >> /etc/network/interfaces
-echo -e "allow-hotplug wlan2" >> /etc/network/interfaces
-echo -e "iface wlan2 inet dhcp" >> /etc/network/interfaces
-echo -e "wpa-ssid \"Gervang Wireless\"" >> /etc/network/interfaces
-echo -e "wpa-psk \"cocoapunch\"" >> /etc/network/interfaces
-echo -e "\n" >> /etc/network/interfaces
+echo "" >> /etc/network/interfaces
+echo "iface lo inet loopback" >> /etc/network/interfaces
+echo "iface eth0 inet dhcp" >> /etc/network/interfaces
+echo "\n" >> /etc/network/interfaces
+echo "auto wlan1" >> /etc/network/interfaces
+echo "allow-hotplug wlan1" >> /etc/network/interfaces
+echo "iface wlan1 inet dhcp" >> /etc/network/interfaces
+echo "wpa-ssid \"Gervang Wireless\"" >> /etc/network/interfaces
+echo "wpa-psk \"cocoapunch\"" >> /etc/network/interfaces
+echo "\n" >> /etc/network/interfaces
+echo "auto wlan2" >> /etc/network/interfaces
+echo "allow-hotplug wlan2" >> /etc/network/interfaces
+echo "iface wlan2 inet dhcp" >> /etc/network/interfaces
+echo "wpa-ssid \"Gervang Wireless\"" >> /etc/network/interfaces
+echo "wpa-psk \"cocoapunch\"" >> /etc/network/interfaces
+echo "" >> /etc/network/interfaces
 
-echo -e "\nfile write complete\n"
+echo "\nfile write complete\n"
 
 cat /etc/network/interfaces
 
