@@ -11,19 +11,19 @@ var networkInterfaces = {
 		connect: "auto lo\n\n" + 
 			"iface lo inet loopback\n" +
 			"iface eth0 inet dhcp\n\n" +
-			"auto wlan2\n" + 
+			"auto wlan0\n" + 
 			"allow-hotplug wlan1\n" + 
 			"iface wlan1 inet dhcp\n" +
 			"wpa-ssid \"{ssid}\"\n" +
 			"wpa-psk \"{password}\"\n" +
-			"iface wlan2 inet static\n" +
+			"iface wlan0 inet static\n" +
 			"address 10.4.20.1\n" + 
 			"netmask 255.255.255.0",
 		
 		access: "auto lo\n\n" +
 			"iface lo inet loopback\n" + 
 			"iface eth0 inet dhcp\n\n" + 
-			"iface wlan2 inet static\n" +
+			"iface wlan0 inet static\n" +
 			"address 10.4.20.1\n" + 
 			"netmask 255.255.255.0"
 	}
@@ -68,13 +68,13 @@ var connect = function (request, reply) {
 		//exec("sudo service isc-dhcp-server stop", puts);
 		setTimeout(function() {
 
-			//console.log("sudo ifconfig wlan2 down");
-			console.log("keeping wlan2 up");
+			//console.log("sudo ifconfig wlan0 down");
+			console.log("keeping wlan0 up");
 			console.log("*killing wlan1");
-			//exec("sudo ifconfig wlan2 down", puts);
+			//exec("sudo ifconfig wlan0 down", puts);
 			exec("sudo ifconfig wlan1 down", puts);
 			setTimeout(function(){
-				//exec("sudo ifdown wlan2", puts);
+				//exec("sudo ifdown wlan0", puts);
 				exec("sudo ifdown wlan1", puts);
 				
 				setTimeout(function(){
