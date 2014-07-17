@@ -50,6 +50,8 @@ var initAccess = function() {
 	exec("sudo ifdown wlan0", puts);
 	console.log("sudo ifdown wlan1");
 	exec("sudo ifdown wlan1", puts);
+	exec("sudo iwconfig wlan0 power off", puts);
+	exec("sudo iwconfig wlan1 power off", puts);
 	console.log("writing file");
 	setTimeout(function(){
 		fs.writeFile(networkInterfaces.path, networkInterfaces.content.access, function(err) {
@@ -58,6 +60,8 @@ var initAccess = function() {
 		    } else {
 		        console.log("networkInterfaces.content.access was saved!");
 		        exec("sudo ifconfig wlan0 10.4.20.1", puts);
+		        exec("sudo iwconfig wlan0 power off", puts);
+		        exec("sudo iwconfig wlan1 power off", puts);
 		        setTimeout(function(){
 		        	exec("sudo service isc-dhcp-server start", puts);
 			        setTimeout(function(){
