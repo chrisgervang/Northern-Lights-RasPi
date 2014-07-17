@@ -1,6 +1,12 @@
 #!/bin/sh
 # build status: this works!!
 #print out common commands
+echo "\n***********************\nusb wifi name rules"
+cat /etc/udev/rules.d/70-persistent-net.rules
+
+echo "\n***********************\nlsusb"
+lsusb
+
 echo "***********************\nhostapd config file"
 cat /etc/hostapd/hostapd.conf
 
@@ -13,14 +19,8 @@ iwconfig
 echo "\n***********************\nifconfig"
 ifconfig
 
-echo "\n***********************\nusb wifi name rules"
-cat /etc/udev/rules.d/70-persistent-net.rules
-
-echo "\n***********************\nlsusb"
-lsusb
-
 echo "\n***********************\nDCHP server status"
-service ics-dhcp-server status
+service isc-dhcp-server status
 
 echo "\n***********************\nhostapd status"
 service hostapd status
