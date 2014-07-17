@@ -69,7 +69,7 @@ var initAccess = function() {
 			        	console.log("waitng 10 seconds: server init");
 			        	setTimeout(function(){initServer()}, 10000);
 			        }, 1000);
-		        }, 5000);
+		        }, 6000);
 		    }
 		});
 	},4000);
