@@ -1,5 +1,5 @@
 #!/bin/sh
-
+# build status: this works!!
 #print out common commands
 echo "***********************\nhostapd config file"
 cat /etc/hostapd/hostapd.conf
