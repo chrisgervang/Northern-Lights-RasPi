@@ -27,6 +27,7 @@ echo "wpa-ssid \"Gervang Wireless\"" >> /etc/network/interfaces
 echo "wpa-psk \"cocoapunch\"" >> /etc/network/interfaces
 echo "" >> /etc/network/interfaces
 
+
 echo "\nfile write complete\n"
 
 cat /etc/network/interfaces
