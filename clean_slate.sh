@@ -4,6 +4,11 @@
 # It's goal is to bring the system to a remote debugging state through eth0 or wlan0.
 # All other networking is turned off, and all servers are shutdown.
 
+# You must renable pm2 at startup with 'pm2 startup debian'
+# You must reconfigure /etc/network/intefaces
+# You must turn power management off for WiFi's
+# Doesn't alter dhcp or hostapd settings yet
+
 ifconfig wlan0 down
 ifconfig wlan1 down
 
@@ -12,6 +17,8 @@ service isc-dhcp-server stop
 service hostapd stop
 
 pm2 stop all
+
+update-rc.d -f pm2-init.sh remove
 
 echo "writting to /etc/interfaces/"
 
