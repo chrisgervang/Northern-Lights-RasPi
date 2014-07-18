@@ -29,11 +29,12 @@ echo "auto $CLIENT" >> /etc/network/interfaces
 echo "allow-hotplug $CLIENT" >> /etc/network/interfaces
 echo "iface $CLIENT inet dhcp" >> /etc/network/interfaces
 echo "  wpa-ssid \"$SSID\"" >> /etc/network/interfaces
-echo "  wpa-psk \"$PSK\"\n" >> /etc/network/interfaces
+echo "  wpa-psk \"$PSK\"" >> /etc/network/interfaces
+echo "  netmask 255.255.255.0\n"
 
 echo "iface $AP inet static" >> /etc/network/interfaces
 echo "  address 10.4.20.1" >> /etc/network/interfaces
-echo "netmask 255.255.255.0\n" >> /etc/network/interfaces
+echo "  netmask 255.255.255.0\n" >> /etc/network/interfaces
 
 echo "wireless-power off" >> /etc/network/interfaces
 
