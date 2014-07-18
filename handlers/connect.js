@@ -3,7 +3,9 @@ var prettyjson = require('prettyjson');
 var fs   	   = require('fs');
 var sys  	   = require('sys');
 var puts 		= function(error, stdout, stderr) { sys.puts(stdout) }
-var utils		= require('../utils.js')
+var utils		= require('../utils.js');
+var _ 			= require('lodash');
+
 
 var networkInterfaces = {
 	path: "/etc/network/interfaces",
@@ -32,7 +34,7 @@ var networkInterfaces = {
 }
 
 var initMining = function() {
-	console.log("initMining");
+	console.log("initMining captured");
 	var pong = "undefined";
 
 	var ping = setInterval(function(){
@@ -58,45 +60,17 @@ var connect = function (request, reply) {
 	var credentials = request.payload;
 	console.log("hi!", credentials);
 
-	var connect = networkInterfaces.content.connect;
-	connect = connect.replace("{ssid}", credentials.ssid);
-	connect = connect.replace("{password}", credentials.password);
+	var client = spawn('sudo sh /home/pi/client.sh', ['wlan1', credentials.ssid, credentials.password, 'wlan0']);
 
-	console.log(connect);
-	//init wifi
-	//exec("sudo service hostapd stop", puts);
-	setTimeout(function(){
-
-		//exec("sudo service isc-dhcp-server stop", puts);
-		setTimeout(function() {
-
-			//console.log("sudo ifconfig wlan0 down");
-			console.log("keeping wlan0 up");
-			console.log("*killing wlan1");
-			//exec("sudo ifconfig wlan0 down", puts);
-			exec("sudo ifconfig wlan1 down", puts);
-			setTimeout(function(){
-				//exec("sudo ifdown wlan0", puts);
-				exec("sudo ifdown wlan1", puts);
-				
-				setTimeout(function(){
-					fs.writeFile(networkInterfaces.path, connect, function(err) {
-					    if(err) {
-					        console.log(err);
-					    } else {
-					        console.log("networkInterfaces.content.connect was saved!");
-					        // console.log("waiting for 10 secs: access point init");
-					        setTimeout(function(){ 
-					        	console.log("sudo ifup wlan1");
-					        	exec("sudo ifup wlan1", puts);
-					        	setTimeout(function(){initMining();}, 3000);
-					        }, 1000);
-					    }
-					});
-				},4000);
-			},2000);
-		}, 4000);
-	}, 2000);
+	client.stdout.on('data', function(data) {
+		var lines = data.toString('utf-8').split('\n');
+		console.log(lines);
+		if (_.contains(lines, "announce: init mining")) {
+			console.log("init mining triggered");
+			initMining();
+			// client.kill()
+		}
+	});
 }
 
 module.exports = connect;

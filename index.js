@@ -46,33 +46,18 @@ setTimeout(function(){initAccess()}, 1500);
 
 var initAccess = function() {
 	//init access point
-	console.log("sudo ifdown wlan0");
-	exec("sudo ifdown wlan0", puts);
-	console.log("sudo ifdown wlan1");
-	exec("sudo ifdown wlan1", puts);
-	exec("sudo iwconfig wlan0 power off", puts);
-	exec("sudo iwconfig wlan1 power off", puts);
-	console.log("writing file");
-	setTimeout(function(){
-		fs.writeFile(networkInterfaces.path, networkInterfaces.content.access, function(err) {
-		    if(err) {
-		        console.log(err);
-		    } else {
-		        console.log("networkInterfaces.content.access was saved!");
-		        exec("sudo ifconfig wlan0 10.4.20.1", puts);
-		        exec("sudo iwconfig wlan0 power off", puts);
-		        exec("sudo iwconfig wlan1 power off", puts);
-		        setTimeout(function(){
-		        	exec("sudo service isc-dhcp-server start", puts);
-			        setTimeout(function(){
-			        	exec("sudo service hostapd start", puts);
-			        	console.log("waitng 10 seconds: server init");
-			        	setTimeout(function(){initServer()}, 10000);
-			        }, 1000);
-		        }, 6000);
-		    }
-		});
-	},4000);
+
+	var ap = spawn('sudo sh /home/pi/ap.sh', ['wlan0']);
+
+	ap.stdout.on('data', function(data) {
+		var lines = data.toString('utf-8').split('\n');
+		console.log(lines);
+		if (_.contains(lines, "announce: init server")) {
+			console.log("init server triggered");
+			initServer();
+			// ap.kill()
+		}
+	});
 }
 
 
