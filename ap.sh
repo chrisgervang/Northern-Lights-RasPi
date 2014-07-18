@@ -16,16 +16,16 @@ iwconfig $1 power off
 
 echo "writting to /etc/interfaces/"
 
-"auto lo\n" > /etc/network/interfaces
+echo "auto lo\n" > /etc/network/interfaces
 
-"iface lo inet loopback" >> /etc/network/interfaces
-"iface eth0 inet dhcp\n" >> /etc/network/interfaces
+echo "iface lo inet loopback" >> /etc/network/interfaces
+echo "iface eth0 inet dhcp\n" >> /etc/network/interfaces
 
-"iface $1 inet static" >> /etc/network/interfaces
-"address 10.4.20.1" >> /etc/network/interfaces
-"netmask 255.255.255.0\n" >> /etc/network/interfaces
+echo "iface $1 inet static" >> /etc/network/interfaces
+echo "address 10.4.20.1" >> /etc/network/interfaces
+echo "netmask 255.255.255.0\n" >> /etc/network/interfaces
 
-"wireless-power off" >> /etc/network/interfaces
+echo "wireless-power off" >> /etc/network/interfaces
 
 
 echo "\nfile write complete\n"
