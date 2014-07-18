@@ -28,9 +28,9 @@ echo "iface lo inet loopback\n" >> /etc/network/interfaces
 echo "auto eth0" >> /etc/network/interfaces
 echo "iface eth0 inet dhcp\n" >> /etc/network/interfaces
 
-echo "iface wlan0 inet dhcp\n" >> /etc/network/interfaces
+echo "iface wlan0 inet manual\n" >> /etc/network/interfaces
 
-echo "iface wlan1 inet dhcp\n" >> /etc/network/interfaces
+echo "iface wlan1 inet manual\n" >> /etc/network/interfaces
 
 echo "wireless-power off" >> /etc/network/interfaces
 
