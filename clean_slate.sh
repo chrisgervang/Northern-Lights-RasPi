@@ -8,10 +8,14 @@
 # You must reconfigure /etc/network/intefaces
 # You must turn power management off for WiFi's
 # Doesn't alter dhcp or hostapd settings yet
+dhclient -r wlan0
+dhclient -r wlan1
+
+ifdown wlan0
+ifdown wlan1
 
 ifconfig wlan0 down
 ifconfig wlan1 down
-
 
 service isc-dhcp-server stop
 service hostapd stop
@@ -36,5 +40,8 @@ echo "wireless-power off" >> /etc/network/interfaces
 
 echo "\nfile write complete\n"
 
+dhclient -r eth0
+
 ifdown eth0
+
 ifup eth0
