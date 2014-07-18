@@ -46,10 +46,9 @@ cat /etc/network/interfaces
 
 sleep 3
 
-ifconfig $CLIENT up
-
-
-dhclient -v wlan1
+ifup $CLIENT
+echo "@#$%^&"
+dhclient -v $CLIENT
 
 # sleep 3
 
