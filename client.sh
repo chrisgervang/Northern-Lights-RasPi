@@ -49,7 +49,7 @@ sleep 3
 ifconfig $CLIENT up
 
 
-# dhclient -v wlan1
+dhclient -v wlan1
 
 # sleep 3
 
