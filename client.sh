@@ -7,15 +7,17 @@ SSID=$2
 PSK=$3
 AP=$4
 
-ifconfig $CLIENT down
+# ifconfig $CLIENT down
 
-# sleep 2
+
 
 ifdown $CLIENT
 
-# sleep 4
+# sleep 2
 
 iwconfig $CLIENT power off
+
+sleep 4
 
 echo "writting to /etc/interfaces/"
 
@@ -30,7 +32,7 @@ echo "allow-hotplug $CLIENT" >> /etc/network/interfaces
 echo "iface $CLIENT inet dhcp" >> /etc/network/interfaces
 echo "  wpa-ssid \"$SSID\"" >> /etc/network/interfaces
 echo "  wpa-psk \"$PSK\"" >> /etc/network/interfaces
-echo "  netmask 255.255.255.0\n" >> /etc/network/interfaces
+# echo "  netmask 255.255.255.0\n" >> /etc/network/interfaces
 
 echo "iface $AP inet static" >> /etc/network/interfaces
 echo "  address 10.4.20.1" >> /etc/network/interfaces
@@ -42,7 +44,7 @@ echo "\nfile write complete\n"
 
 cat /etc/network/interfaces
 
-# sleep 1
+sleep 1
 
 ifup $CLIENT
 
