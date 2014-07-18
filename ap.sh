@@ -40,7 +40,7 @@ cat /etc/network/interfaces
 
 ifconfig $INTER 10.4.20.1
 
-# sleep 6
+sleep 2
 
 service hostapd start
 
