@@ -17,7 +17,7 @@ ifdown $INTER
 
 iwconfig $INTER power off
 
-# sleep 4
+sleep 4
 
 echo "writting to /etc/interfaces/"
 
