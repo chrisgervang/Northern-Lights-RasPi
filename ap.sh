@@ -7,6 +7,11 @@ INTER=$1
 # DRIVER=$3
 
 # go through each command. Figure out if you need to "sleep" at any point. watch syslog. 
+service isc-dhcp-server stop
+
+# sleep 1
+
+service hostapd stop
 
 ifdown $1
 
