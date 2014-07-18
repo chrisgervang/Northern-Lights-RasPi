@@ -44,7 +44,7 @@ sleep 2
 
 service hostapd start
 
-# sleep 1
+sleep 1
 
 service isc-dhcp-server start
 
