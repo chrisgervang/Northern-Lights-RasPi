@@ -15,6 +15,8 @@ ifdown $CLIENT
 
 # sleep 4
 
+iwconfig $CLIENT power off
+
 echo "writting to /etc/interfaces/"
 
 echo "auto lo" > /etc/network/interfaces

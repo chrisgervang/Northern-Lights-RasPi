@@ -13,9 +13,9 @@ service isc-dhcp-server stop
 
 service hostapd stop
 
-ifdown $1
+ifdown $INTER
 
-iwconfig $1 power off
+iwconfig $INTER power off
 
 # sleep 4
 
@@ -27,7 +27,7 @@ echo "iface lo inet loopback\n" >> /etc/network/interfaces
 echo "auto eth0" >> /etc/network/interfaces
 echo "iface eth0 inet dhcp\n" >> /etc/network/interfaces
 
-echo "iface $1 inet static" >> /etc/network/interfaces
+echo "iface $INTER inet static" >> /etc/network/interfaces
 echo "address 10.4.20.1" >> /etc/network/interfaces
 echo "netmask 255.255.255.0\n" >> /etc/network/interfaces
 
@@ -38,7 +38,7 @@ echo "\nfile write complete\n"
 
 cat /etc/network/interfaces
 
-ifconfig $1 10.4.20.1
+ifconfig $INTER 10.4.20.1
 
 # sleep 6
 
