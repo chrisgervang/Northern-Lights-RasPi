@@ -44,9 +44,12 @@ echo "\nfile write complete\n"
 
 cat /etc/network/interfaces
 
-sleep 1
+sleep 3
 
-ifup $CLIENT
+ifconfig $CLIENT up
+
+
+# dhclient -v wlan1
 
 # sleep 3
 
