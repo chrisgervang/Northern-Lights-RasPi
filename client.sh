@@ -17,22 +17,23 @@ ifdown $CLIENT
 
 echo "writting to /etc/interfaces/"
 
-"auto lo\n" > /etc/network/interfaces
+echo "auto lo" > /etc/network/interfaces
+echo "iface lo inet loopback\n" >> /etc/network/interfaces
 
-"iface lo inet loopback" >> /etc/network/interfaces
-"iface eth0 inet dhcp\n" >> /etc/network/interfaces
+echo "auto eth0" >> /etc/network/interfaces
+echo "iface eth0 inet dhcp\n" >> /etc/network/interfaces
 
-"auto $CLIENT" >> /etc/network/interfaces
-"allow-hotplug $CLIENT" >> /etc/network/interfaces
-"iface $CLIENT inet dhcp" >> /etc/network/interfaces
-  "wpa-ssid \"$SSID\"" >> /etc/network/interfaces
-  "wpa-psk \"$PSK\"\n" >> /etc/network/interfaces
+echo "auto $CLIENT" >> /etc/network/interfaces
+echo "allow-hotplug $CLIENT" >> /etc/network/interfaces
+echo "iface $CLIENT inet dhcp" >> /etc/network/interfaces
+echo "  wpa-ssid \"$SSID\"" >> /etc/network/interfaces
+echo "  wpa-psk \"$PSK\"\n" >> /etc/network/interfaces
 
-"iface $AP inet static" >> /etc/network/interfaces
-  "address 10.4.20.1" >> /etc/network/interfaces
-"netmask 255.255.255.0\n" >> /etc/network/interfaces
+echo "iface $AP inet static" >> /etc/network/interfaces
+echo "  address 10.4.20.1" >> /etc/network/interfaces
+echo "netmask 255.255.255.0\n" >> /etc/network/interfaces
 
-"wireless-power off" >> /etc/network/interfaces
+echo "wireless-power off" >> /etc/network/interfaces
 
 echo "\nfile write complete\n"
 

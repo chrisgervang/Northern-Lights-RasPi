@@ -22,14 +22,17 @@ update-rc.d -f pm2-init.sh remove
 
 echo "writting to /etc/interfaces/"
 
-echo "auto lo\n" > /etc/network/interfaces
+echo "auto lo" > /etc/network/interfaces
+echo "iface lo inet loopback\n" >> /etc/network/interfaces
 
-echo "iface lo inet loopback" >> /etc/network/interfaces
-
-echo "auto eth0\n" >> /etc/network/interfaces
+echo "auto eth0" >> /etc/network/interfaces
 echo "iface eth0 inet dhcp\n" >> /etc/network/interfaces
+
 echo "iface wlan0 inet dhcp\n" >> /etc/network/interfaces
+
 echo "iface wlan1 inet dhcp\n" >> /etc/network/interfaces
+
+echo "wireless-power off" >> /etc/network/interfaces
 
 echo "\nfile write complete\n"
 
