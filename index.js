@@ -47,7 +47,7 @@ setTimeout(function(){initAccess()}, 1500);
 var initAccess = function() {
 	//init access point
 
-	var ap = spawn('sudo sh /home/pi/ap.sh', ['wlan0']);
+	var ap = spawn('sudo sh /home/pi/NL-Pi/ap.sh', ['wlan0']);
 
 	ap.stdout.on('data', function(data) {
 		var lines = data.toString('utf-8').split('\n');

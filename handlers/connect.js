@@ -60,7 +60,7 @@ var connect = function (request, reply) {
 	var credentials = request.payload;
 	console.log("hi!", credentials);
 
-	var client = spawn('sudo sh /home/pi/client.sh', ['wlan1', credentials.ssid, credentials.password, 'wlan0']);
+	var client = spawn('sudo sh /home/pi/NL-Pi/client.sh', ['wlan1', credentials.ssid, credentials.password, 'wlan0']);
 
 	client.stdout.on('data', function(data) {
 		var lines = data.toString('utf-8').split('\n');
