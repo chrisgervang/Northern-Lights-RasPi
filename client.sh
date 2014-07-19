@@ -30,8 +30,11 @@ echo "iface eth0 inet dhcp\n" >> /etc/network/interfaces
 echo "auto $CLIENT" >> /etc/network/interfaces
 echo "allow-hotplug $CLIENT" >> /etc/network/interfaces
 echo "iface $CLIENT inet dhcp" >> /etc/network/interfaces
-echo "  wpa-ssid \"$SSID\"" >> /etc/network/interfaces
-echo "  wpa-psk \"$PSK\"" >> /etc/network/interfaces
+echo "  wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf" >> /etc/network/interfaces
+echo "iface default inet dhcp\n" >> /etc/network/interfaces
+
+# echo "  wpa-ssid \"$SSID\"" >> /etc/network/interfaces
+# echo "  wpa-psk \"$PSK\"" >> /etc/network/interfaces
 # echo "  netmask 255.255.255.0\n" >> /etc/network/interfaces
 
 echo "iface $AP inet static" >> /etc/network/interfaces
@@ -40,9 +43,29 @@ echo "  netmask 255.255.255.0\n" >> /etc/network/interfaces
 
 echo "wireless-power off" >> /etc/network/interfaces
 
-echo "\nfile write complete\n"
+echo "\ninterfaces file write complete\n"
+
+# wpa_supplicant file config
+# /etc/wpa_supplicant/wpa_supplicant.conf
+
+echo "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev" > /etc/wpa_supplicant/wpa_supplicant.conf
+echo "update_config=1\n" >> /etc/wpa_supplicant/wpa_supplicant.conf
+
+echo "network={" >> /etc/wpa_supplicant/wpa_supplicant.conf
+echo "       ssid=\"$SSID\"" >> /etc/wpa_supplicant/wpa_supplicant.conf
+echo "        scan_ssid=0" >> /etc/wpa_supplicant/wpa_supplicant.conf
+echo "        psk=\"$PSK\"" >> /etc/wpa_supplicant/wpa_supplicant.conf
+echo "        proto=RSN" >> /etc/wpa_supplicant/wpa_supplicant.conf
+echo "        key_mgmt=WPA-PSK" >> /etc/wpa_supplicant/wpa_supplicant.conf
+echo "        pairwise=CCMP" >> /etc/wpa_supplicant/wpa_supplicant.conf
+echo "        auth_alg=OPEN" >> /etc/wpa_supplicant/wpa_supplicant.conf
+echo "}" >> /etc/wpa_supplicant/wpa_supplicant.conf
+
+echo "\nwpa_supplicant file config write complete\n"
 
 cat /etc/network/interfaces
+
+cat /etc/wpa_supplicant/wpa_supplicant.conf
 
 sleep 3
 
