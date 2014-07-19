@@ -29,7 +29,7 @@ echo "iface eth0 inet dhcp\n" >> /etc/network/interfaces
 
 echo "auto $CLIENT" >> /etc/network/interfaces
 echo "allow-hotplug $CLIENT" >> /etc/network/interfaces
-echo "iface $CLIENT inet dhcp" >> /etc/network/interfaces
+echo "iface $CLIENT inet manual" >> /etc/network/interfaces
 echo "  wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf" >> /etc/network/interfaces
 echo "iface default inet dhcp\n" >> /etc/network/interfaces
 
