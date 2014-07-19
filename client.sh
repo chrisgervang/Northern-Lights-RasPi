@@ -47,8 +47,6 @@ cat /etc/network/interfaces
 sleep 3
 
 ifup $CLIENT
-echo "@#$%^&"
-dhclient -v $CLIENT
 
 # sleep 3
 
