@@ -19,6 +19,9 @@ iwconfig
 echo "\n***********************\nifconfig"
 ifconfig
 
+echo "\n***********************\nwpa_cli status"
+wpa_cli status
+
 echo "\n***********************\nDCHP server status"
 service isc-dhcp-server status
 
