@@ -48,7 +48,10 @@ sleep 3
 
 ifup $CLIENT
 
-# sleep 3
+sleep 3
+
+dhclient -v $CLIENT
+
 
 echo "announce: init mining"
 
