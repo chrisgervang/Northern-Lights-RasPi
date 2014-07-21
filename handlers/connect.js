@@ -94,7 +94,7 @@ var connect = function (request, reply) {
 	client.stderr.on('data', function(data) {
 	    console.log('stderr: ' + data);
 	});
-	client.stdout.on('close', function () { 
+	client.stdout.on('exit', function () { 
 		if (mining === false) {
 			setTimeout(function(){initMining()}, 4000);
 		};
