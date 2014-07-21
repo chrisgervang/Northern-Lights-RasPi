@@ -44,7 +44,9 @@ var networkInterfaces = {
 var initAccess = function() {
 	//init access point
 	console.log("Tried to spawn ap");
-	var ap = spawn('./home/pi/NL-Pi/ap.sh', ['wlan0']);
+	var ap = spawn('sh', ['ap.sh','wlan0'], {
+		cwd: process.env.HOME + '/NL-Pi'
+	});
 
 	ap.stdout.on('data', function(data) {
 		var lines = data.toString('utf-8').split('\n');
