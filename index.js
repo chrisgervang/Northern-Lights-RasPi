@@ -54,8 +54,9 @@ var initAccess = function() {
 	    console.log('stderr: ' + data);
 	});
 	ap.stdout.on('close', function () { 
-		initServer();
 		console.log('ap ended!'); 
+		initServer();
+		
 	});
 }
 // exec("sudo ifconfig wlan0 down", puts);
