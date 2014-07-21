@@ -60,16 +60,27 @@ var connect = function (request, reply) {
 	var credentials = request.payload;
 	console.log("hi!", credentials);
 
-	var client = spawn('sh', ['/home/pi/NL-Pi/client.sh','wlan1', credentials.ssid, credentials.password, 'wlan0']);
+	var client = exec('sh ./client.sh wlan1 \"' + credentials.ssid + '\" ' + credentials.password + ' wlan0');
 
+	// client.stdout.on('data', function(data) {
+	// 	var lines = data.toString('utf-8').split('\n');
+	// 	console.log(lines);
+	// 	if (_.contains(lines, "announce: init mining")) {
+	// 		console.log("init mining triggered");
+	// 		initMining();
+	// 		// client.kill()
+	// 	}
+	// });
 	client.stdout.on('data', function(data) {
-		var lines = data.toString('utf-8').split('\n');
-		console.log(lines);
-		if (_.contains(lines, "announce: init mining")) {
-			console.log("init mining triggered");
-			initMining();
-			// client.kill()
-		}
+		console.log('stdout: ' + data);
+	});
+
+	client.stderr.on('data', function(data) {
+	    console.log('stderr: ' + data);
+	});
+	client.stdout.on('close', function () { 
+		initServer();
+		console.log('client ended!'); 
 	});
 }
 

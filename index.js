@@ -47,19 +47,16 @@ var initAccess = function() {
 	var ap = exec('sh ./ap.sh wlan0');
 
 	ap.stdout.on('data', function(data) {
-		var lines = data.toString('utf-8').split('\n');
-		console.log(lines);
-		if (_.contains(lines, "announce: init server")) {
-			console.log("init server triggered");
-			initServer();
-			// ap.kill()
-		}
+		console.log('stdout: ' + data);
 	});
 
 	ap.stderr.on('data', function(data) {
-	    console.log('stdout: ' + data);
+	    console.log('stderr: ' + data);
 	});
-	ap.stdout.on('close', function () { console.log('ap ended!'); });
+	ap.stdout.on('close', function () { 
+		initServer();
+		console.log('ap ended!'); 
+	});
 }
 // exec("sudo ifconfig wlan0 down", puts);
 // exec("sudo ifconfig wlan1 down", puts);
@@ -79,7 +76,7 @@ tail.stdout.on('data', function (data) {
     _.forEach(lines, function(line){
     	var line = line.split(' raspberrypi ')[1];
     	if (!line) {
-    		console.log('\n');
+    		console.log('');
     	} else {
     		console.log(line);
     	}
