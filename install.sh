@@ -28,6 +28,8 @@ mv /home/pi/node /usr/sbin/nodejs
 echo "install dhcp and hostapd"
 apt-get install hostapd isc-dhcp-server
 
+apt-get install iw 
+
 
 echo "remove load at boot:" 
 update-rc.d -f isc-dhcp-server remove
@@ -78,6 +80,14 @@ cd ./bfgminer
 ./autogen.sh
 ./configure
 make
+
+git clone git://github.com/quick2wire/quick2wire-gpio-admin.git
+cd quick2wire-gpio-admin/
+make
+make install
+adduser $USER gpio
+cd ..
+
 echo "moving to home"
 cd /home/pi
 
@@ -94,3 +104,33 @@ cd /home/pi
 #      KERNEL!="wlan*[0-9]|ath*|msh*|ra*|sta*|ctc*|lcs*|hsi*", \
 #      GOTO=“persistent_net_generator_end”
 # } 7/12 worked!
+
+apt-get update
+
+apt-get upgrade
+
+echo "subnet 10.4.20.0 netmask 255.255.255.0 {" >> /etc/dhcp/dhcpd.conf
+echo "range 10.4.20.10 10.4.20.50;" >> /etc/dhcp/dhcpd.conf
+echo "option broadcast-address 10.4.20.255;" >> /etc/dhcp/dhcpd.conf
+echo "option routers 10.4.20.1;" >> /etc/dhcp/dhcpd.conf
+echo "default-lease-time 600;" >> /etc/dhcp/dhcpd.conf
+echo "max-lease-time 7200;" >> /etc/dhcp/dhcpd.conf
+echo "option domain-name \"miner.quarry.dev\";" >> /etc/dhcp/dhcpd.conf
+echo "option domain-name-servers 8.8.8.8, 8.8.4.4;" >> /etc/dhcp/dhcpd.conf
+echo "}" >> /etc/dhcp/dhcpd.conf
+
+
+echo "interface=wlan0" > /etc/hostapd/hostapd.conf
+echo "driver=nl80211" >> /etc/hostapd/hostapd.conf
+echo "ssid=Quarry 53s65e" >> /etc/hostapd/hostapd.conf
+echo "hw_mode=g" >> /etc/hostapd/hostapd.conf
+echo "channel=6" >> /etc/hostapd/hostapd.conf
+echo "macaddr_acl=0" >> /etc/hostapd/hostapd.conf
+echo "auth_algs=1" >> /etc/hostapd/hostapd.conf
+echo "ignore_broadcast_ssid=0" >> /etc/hostapd/hostapd.conf
+
+npm install -g pm2
+
+npm install
+
+git config remote.origin.url https://chrisgervang:kwy469655491@github.com/chrisgervang/NL-Pi.git

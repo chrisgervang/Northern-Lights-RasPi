@@ -13,7 +13,7 @@ AP=$4
 
 ifdown $CLIENT
 
-# sleep 2
+sleep 2
 
 iwconfig $CLIENT power off
 
@@ -52,7 +52,7 @@ echo "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev" > /etc/wpa_suppli
 echo "update_config=1\n" >> /etc/wpa_supplicant/wpa_supplicant.conf
 
 echo "network={" >> /etc/wpa_supplicant/wpa_supplicant.conf
-echo "       ssid=\"$SSID\"" >> /etc/wpa_supplicant/wpa_supplicant.conf
+echo "        ssid=\"$SSID\"" >> /etc/wpa_supplicant/wpa_supplicant.conf
 echo "        scan_ssid=0" >> /etc/wpa_supplicant/wpa_supplicant.conf
 echo "        psk=\"$PSK\"" >> /etc/wpa_supplicant/wpa_supplicant.conf
 echo "        proto=RSN" >> /etc/wpa_supplicant/wpa_supplicant.conf
