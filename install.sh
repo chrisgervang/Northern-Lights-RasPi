@@ -80,6 +80,7 @@ cd ./bfgminer
 ./autogen.sh
 ./configure
 make
+ln -s /home/pi/bfgminer/bfgminer /usr/bin/bfgminer
 
 git clone git://github.com/quick2wire/quick2wire-gpio-admin.git
 cd quick2wire-gpio-admin/
