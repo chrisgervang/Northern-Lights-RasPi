@@ -40,13 +40,11 @@ var networkInterfaces = {
 
 
 
-/*
+
 var initAccess = function() {
 	//init access point
 	console.log("Tried to spawn ap");
-	var ap = spawn('sh', ['ap.sh','wlan0'], {
-		cwd: process.env.HOME + '/NL-Pi'
-	});
+	var ap = exec('sh ./ap.sh', ['wlan0']);
 
 	ap.stdout.on('data', function(data) {
 		var lines = data.toString('utf-8').split('\n');
@@ -57,13 +55,17 @@ var initAccess = function() {
 			// ap.kill()
 		}
 	});
-	ap.stdout.on('end', function () { console.log('ap ended!'); });
+
+	ap.stderr.on('data', function(data) {
+	    console.log('stdout: ' + data);
+	});
+	ap.stdout.on('close', function () { console.log('ap ended!'); });
 }
 // exec("sudo ifconfig wlan0 down", puts);
 // exec("sudo ifconfig wlan1 down", puts);
 setTimeout(function(){initAccess()}, 1500);
 
-*/
+
 console.log("watching file");
 // fs.watch("/var/log/syslog", {
 //   persistent: true
