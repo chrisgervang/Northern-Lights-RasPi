@@ -40,8 +40,8 @@ var networkInterfaces = {
 
 
 
-exec("sudo ifconfig wlan0 down", puts);
-exec("sudo ifconfig wlan1 down", puts);
+// exec("sudo ifconfig wlan0 down", puts);
+// exec("sudo ifconfig wlan1 down", puts);
 setTimeout(function(){initAccess()}, 1500);
 
 var initAccess = function() {
@@ -67,7 +67,7 @@ console.log("watching file");
 // }, function(event, filename) {
 //   console.log(".");
 // });
-var tail = spawn('tail', ['-n', '1', '-F', "/var/log/syslog"]);
+var tail = spawn('tail', ['-n', '1', '-f', "/var/log/syslog"]);
 
 tail.stdout.on('data', function (data) {
     var lines = data.toString('utf-8').split('\n');
