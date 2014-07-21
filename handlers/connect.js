@@ -32,11 +32,12 @@ var networkInterfaces = {
 			"wireless-power off",
 	}
 }
+var mining = false;
 
 var initMining = function() {
 	console.log("initMining captured");
 	var pong = "undefined";
-
+	mining = true;
 	var ping = setInterval(function(){
 		utils.get({"event": "initMining"}, "http://107.170.245.191:9000/ping", function(body){
 			console.log(utils.fullJSON(body));
@@ -79,7 +80,9 @@ var connect = function (request, reply) {
 	    console.log('stderr: ' + data);
 	});
 	client.stdout.on('close', function () { 
-		initServer();
+		if (mining === false) {
+			initMining();
+		};
 		console.log('client ended!'); 
 	});
 }
