@@ -13,7 +13,7 @@ AP=$4
 
 ifdown $CLIENT
 
-sleep 2
+sleep 6
 
 iwconfig $CLIENT power off
 
