@@ -77,7 +77,7 @@ tail.stdout.on('data', function (data) {
     _.forEach(lines, function(line){
     	var line = line.split(' raspberrypi ')[1];
     	if (!line) {
-    		console.log('');
+    		// console.log('');
     	} else {
     		console.log(line);
     	}

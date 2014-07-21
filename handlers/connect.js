@@ -45,7 +45,20 @@ var initMining = function() {
 		});
 		if (pong === "pong") {
 			//were online! start mining
-			exec("sudo ~/bfgminer/bfgminer -o stratum+tcp://uk1.ghash.io:3333 -u chrisgervang.worker1 -p bit -S bigpic:all 2>logfile.txt", puts);
+			var mineing = exec("sudo ~/bfgminer/bfgminer -o stratum+tcp://uk1.ghash.io:3333 -u chrisgervang.worker1 -p bit -S bigpic:all 2>logfile.txt");
+			mineing.stdout.on('data', function(data) {
+				console.log('stdout: ' + data);
+			});
+
+			mineing.stderr.on('data', function(data) {
+			    console.log('stderr: ' + data);
+			});
+			mineing.stdout.on('close', function () { 
+				if (mining === false) {
+					initMining();
+				};
+				console.log('mineing ended!'); 
+			});
 			clearInterval(ping);
 			console.log("started mining!");
 			//TODO: send "event: miner, data: online" to firebase and/or our server.
