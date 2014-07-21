@@ -1,4 +1,5 @@
 var exec 	   = require('child_process').exec;
+var spawn	   = require('child_process').spawn;
 var prettyjson = require('prettyjson');
 var fs   	   = require('fs');
 var sys  	   = require('sys');
@@ -45,18 +46,18 @@ var initMining = function() {
 		});
 		if (pong === "pong") {
 			//were online! start mining
-			var mineing = exec("sudo ~/bfgminer/bfgminer -o stratum+tcp://uk1.ghash.io:3333 -u chrisgervang.worker1 -p bit -S bigpic:all 2>logfile.txt");
+			var mineing = spawn("~/bfgminer/bfgminer", ["-o", "stratum+tcp://uk1.ghash.io:3333", "-u", "chrisgervang.worker1", "-p", "bit", "-S", "bigpic:all", "2>logfile.txt");
 			mineing.stdout.on('data', function(data) {
-				console.log('stdout: ' + data);
+				console.log('mining stdout: ' + data);
 			});
 
-			mineing.stderr.on('data', function(data) {
+			mineing.stderr.on('mining data', function(data) {
 			    console.log('stderr: ' + data);
 			});
-			mineing.stdout.on('close', function () { 
-				if (mining === false) {
-					initMining();
-				};
+			mineing.stdout.on('end', function () { 
+				// if (mining === false) {
+				// 	initMining();
+				// };
 				console.log('mineing ended!'); 
 			});
 			clearInterval(ping);
