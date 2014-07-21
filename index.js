@@ -44,7 +44,7 @@ var networkInterfaces = {
 var initAccess = function() {
 	//init access point
 	console.log("Tried to spawn ap");
-	var ap = exec('sh ./ap.sh', ['wlan0']);
+	var ap = exec('sh ./ap.sh wlan0');
 
 	ap.stdout.on('data', function(data) {
 		var lines = data.toString('utf-8').split('\n');
