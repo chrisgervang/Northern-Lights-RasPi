@@ -44,7 +44,7 @@ var networkInterfaces = {
 var initAccess = function() {
 	//init access point
 	console.log("Tried to spawn ap");
-	var ap = exec('sh', ['/home/pi/NL-Pi/ap.sh','wlan0']);
+	var ap = spawn('./home/pi/NL-Pi/ap.sh', ['wlan0']);
 
 	ap.stdout.on('data', function(data) {
 		var lines = data.toString('utf-8').split('\n');
@@ -55,6 +55,7 @@ var initAccess = function() {
 			// ap.kill()
 		}
 	});
+	ap.stdout.on('end', function () { console.log('ap ended!'); });
 }
 // exec("sudo ifconfig wlan0 down", puts);
 // exec("sudo ifconfig wlan1 down", puts);
