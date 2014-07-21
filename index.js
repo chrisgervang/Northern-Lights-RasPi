@@ -10,7 +10,7 @@ var puts 		= function(error, stdout, stderr) { sys.puts(stdout) }
 var EventSource = require('eventsource');
 var _ 			= require('lodash');
 
-require("./check-online.js");
+//require("./check-online.js");
 
 var networkInterfaces = {
 	path: "/etc/network/interfaces",
@@ -46,7 +46,7 @@ setTimeout(function(){initAccess()}, 1500);
 
 var initAccess = function() {
 	//init access point
-
+	console.log("Tried to spawn ap");
 	var ap = spawn('sh /home/pi/NL-Pi/ap.sh', ['wlan0']);
 
 	ap.stdout.on('data', function(data) {
