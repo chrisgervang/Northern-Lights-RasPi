@@ -46,19 +46,20 @@ var initMining = function() {
 		});
 		if (pong === "pong") {
 			//were online! start mining
-			var mineing = spawn("bfgminer", ["-o", "stratum+tcp://uk1.ghash.io:3333", "-u", "chrisgervang.worker1", "-p", "bit", "-S", "bigpic:all", "2>logfile.txt"]);
+			var mineing = spawn("bfgminer", ["-o", "stratum+tcp://uk1.ghash.io:3333", "-u", "chrisgervang.worker1", "-p", "bit", "-S", "bigpic:all", "2>bfglogfile.txt"]);
+			//bfgminer -o stratum+tcp://uk1.ghash.io:3333 -u chrisgervang.worker1 -p bit -S bigpic:all 2>logfile.txt
 			mineing.stdout.on('data', function(data) {
-				console.log('mining stdout: ' + data);
+				console.log('  mining stdout: ' + data);
 			});
 
 			mineing.stderr.on('mining data', function(data) {
-			    console.log('stderr: ' + data);
+			    console.log('  mining stderr: ' + data);
 			});
 			mineing.stdout.on('end', function () { 
 				// if (mining === false) {
 				// 	initMining();
 				// };
-				console.log('mineing ended!'); 
+				console.log('  mineing ended!'); 
 			});
 			clearInterval(ping);
 			console.log("started mining!");
@@ -95,7 +96,7 @@ var connect = function (request, reply) {
 	});
 	client.stdout.on('close', function () { 
 		if (mining === false) {
-			initMining();
+			setTimeout(function(){initMining()}, 4000);
 		};
 		console.log('client ended!'); 
 	});
