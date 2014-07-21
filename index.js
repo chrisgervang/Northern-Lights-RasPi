@@ -40,7 +40,7 @@ var networkInterfaces = {
 
 
 
-
+/*
 var initAccess = function() {
 	//init access point
 	console.log("Tried to spawn ap");
@@ -63,7 +63,7 @@ var initAccess = function() {
 // exec("sudo ifconfig wlan1 down", puts);
 setTimeout(function(){initAccess()}, 1500);
 
-
+*/
 console.log("watching file");
 // fs.watch("/var/log/syslog", {
 //   persistent: true
