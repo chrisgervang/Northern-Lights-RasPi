@@ -53,7 +53,7 @@ var initAccess = function() {
 	ap.stderr.on('data', function(data) {
 	    console.log('stderr: ' + data);
 	});
-	ap.stdout.on('exit', function () { 
+	ap.on('exit', function () { 
 		console.log('ap ended!'); 
 		initServer();
 		

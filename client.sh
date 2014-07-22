@@ -78,6 +78,8 @@ ifup $CLIENT
 
 echo "announce: init mining"
 
+exit 0
+
 # optional: turn off ap
 
 # service hostapd stop
