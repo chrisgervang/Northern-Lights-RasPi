@@ -65,7 +65,7 @@ var initMining = function() {
 			process.on('exit', function () {
 			    mining.kill();
 			});
-			
+
 			clearInterval(ping);
 			console.log("started mining!");
 			//TODO: send "event: miner, data: online" to firebase and/or our server.
@@ -103,6 +103,7 @@ var connect = function (request, reply) {
 		if (mining === false) {
 			setTimeout(function(){initMining()}, 4000);
 		};
+		reply("client connected").code(200);
 		console.log('client ended!'); 
 	});
 }
