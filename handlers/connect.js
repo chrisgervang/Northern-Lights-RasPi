@@ -76,7 +76,7 @@ var connect = function (request, reply) {
 	var credentials = request.payload;
 	console.log("hi!", credentials);
 
-	var client = exec('sh ./client.sh wlan1 \"' + credentials.ssid + '\" ' + credentials.password + ' wlan0');
+	var client = exec('sudo sh ./client.sh wlan1 \"' + credentials.ssid + '\" ' + credentials.password + ' wlan0');
 
 	// client.stdout.on('data', function(data) {
 	// 	var lines = data.toString('utf-8').split('\n');
