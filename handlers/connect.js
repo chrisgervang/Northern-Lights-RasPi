@@ -94,6 +94,11 @@ var connect = function (request, reply) {
 	// });
 	client.stdout.on('data', function(data) {
 		console.log('stdout: ' + data);
+
+		//look for success or fail logs.
+		//If success, reply success. Save credentials in a new file called "settings.conf". 
+		//	On startup, check for settings.conf and either set up an AP or just connect to a client with those creds.
+		//if fail, reply fail. Also reset client script to get it back to the "AP only" state.
 	});
 
 	client.stderr.on('data', function(data) {
