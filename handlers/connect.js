@@ -48,9 +48,9 @@ var initMining = function() {
 			//were online! start mining
 			var mining = spawn("bfgminer", ["-o", "stratum+tcp://uk1.ghash.io:3333", "-u", "chrisgervang.worker1", "-p", "bit", "-S", "bigpic:all", "--syslog"]);
 			//bfgminer -o stratum+tcp://uk1.ghash.io:3333 -u chrisgervang.worker1 -p bit -S bigpic:all 2>logfile.txt
-			mining.stdout.on('data', function(data) {
-				console.log('  mining stdout: ' + data);
-			});
+			// mining.stdout.on('data', function(data) {
+			// 	console.log('  mining stdout: ' + data);
+			// });
 
 			mining.stderr.on('data', function(data) {
 			    console.log('  mining stderr: ' + data);
@@ -61,6 +61,11 @@ var initMining = function() {
 				// };
 				console.log('  mining ended!'); 
 			});
+
+			process.on('exit', function () {
+			    mining.kill();
+			});
+			
 			clearInterval(ping);
 			console.log("started mining!");
 			//TODO: send "event: miner, data: online" to firebase and/or our server.
