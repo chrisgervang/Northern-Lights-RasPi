@@ -65,6 +65,7 @@ var initMining = function() {
 			});
 
 			process.on('exit', function () {
+			    console.log("mining killed on exit");
 			    mining.kill();
 			});
 
@@ -133,6 +134,7 @@ var connect = function (request, reply) {
 		});
 
 		process.on('exit', function () {
+		    console.log("tail killed on exit");
 		    tail.kill();
 		});
 
