@@ -6,7 +6,7 @@ var sys  	   = require('sys');
 var puts 		= function(error, stdout, stderr) { sys.puts(stdout) }
 var utils		= require('../utils.js');
 var _ 			= require('lodash');
-var jf = require('jsonfile')
+var jf = require('jsonfile');
 
 
 

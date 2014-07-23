@@ -9,7 +9,7 @@ var networks   = require('./handlers/networks.js');
 var puts 		= function(error, stdout, stderr) { sys.puts(stdout) }
 var EventSource = require('eventsource');
 var _ 			= require('lodash');
-
+var jf = require('jsonfile');
 //require("./check-online.js");
 
 var networkInterfaces = {
@@ -42,22 +42,40 @@ var networkInterfaces = {
 
 
 var initAccess = function() {
-	//init access point
-	console.log("Tried to spawn ap");
-	var ap = exec('sudo sh ./ap.sh wlan0');
+	
+	var util = require('util');
 
-	ap.stdout.on('data', function(data) {
-		console.log('stdout: ' + data);
+	var file = './settings.json';
+	jf.readFile(file, function(err, obj) {
+	  console.log(err, util.inspect(obj)); 
+
+	  if (!err) {
+	  	//file exists and we should start up a client
+	  } else {
+	  	//error with persistent file, so lets boot up the old way!
+	  
+	  	//init access point
+	  	console.log("Tried to spawn ap");
+	  	var ap = exec('sudo sh ./ap.sh wlan0');
+
+	  	ap.stdout.on('data', function(data) {
+	  		console.log('stdout: ' + data);
+	  	});
+
+	  	ap.stderr.on('data', function(data) {
+	  	    console.log('stderr: ' + data);
+	  	});
+	  	ap.on('exit', function () { 
+	  		console.log('ap ended!'); 
+	  		initServer();
+	  		
+	  	});
+	  }
+
+	  
 	});
 
-	ap.stderr.on('data', function(data) {
-	    console.log('stderr: ' + data);
-	});
-	ap.on('exit', function () { 
-		console.log('ap ended!'); 
-		initServer();
-		
-	});
+	
 }
 // exec("sudo ifconfig wlan0 down", puts);
 // exec("sudo ifconfig wlan1 down", puts);
