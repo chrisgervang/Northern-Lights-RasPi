@@ -6,6 +6,8 @@ var sys  	   = require('sys');
 var puts 		= function(error, stdout, stderr) { sys.puts(stdout) }
 var utils		= require('../utils.js');
 var _ 			= require('lodash');
+var jf = require('jsonfile')
+
 
 
 var networkInterfaces = {
@@ -83,22 +85,60 @@ var connect = function (request, reply) {
 
 	var client = exec('sudo sh ./client.sh wlan1 \"' + credentials.ssid + '\" ' + credentials.password + ' wlan0');
 
-	// client.stdout.on('data', function(data) {
-	// 	var lines = data.toString('utf-8').split('\n');
-	// 	console.log(lines);
-	// 	if (_.contains(lines, "announce: init mining")) {
-	// 		console.log("init mining triggered");
-	// 		initMining();
-	// 		// client.kill()
-	// 	}
-	// });
 	client.stdout.on('data', function(data) {
 		console.log('stdout: ' + data);
 
+		var tail = spawn('tail', ['-f', '-n', '1', "/var/log/syslog"]);
+
+		
 		//look for success or fail logs.
-		//If success, reply success. Save credentials in a new file called "settings.conf". 
+		tail.stdout.on('data', function (data) {
+		    var lines = data.toString('utf-8').split('\n');
+		    _.forEach(lines, function(line){
+		    	var line = line.split(' raspberrypi ')[1];
+		    	if (!!line) {
+		    		//console.log(line);
+		    		
+		    		//If success, reply success. Save credentials in a new file called "settings.conf".
+		    		if(_.contains(line, "dhclient: bound to ")) {
+		    			//the connection was a success!
+		    			console.log("SUC connected to " + credentials.ssid);
+		    			var settings = {
+		    				ssid: credentials.ssid,
+		    				password: credentials.password,
+		    				persist: true
+		    			};
+		    			var file = "./settings.json";
+
+		    			jf.writeFile(file, settings, function(err) {
+		    			  console.log(err);
+		    			  console.log("settings files saved");
+		    			});
+
+		    			reply("client connected").code(200);
+		    		
+		    		//If fail, reply fail. Also reset client script to get it back to the "AP only" state.
+		    		} else if(_.contains(line, "wlan1: WPA: 4-Way Handshake failed - pre-shared key may be incorrect")) {
+		    			var ifdown = exec("sudo ifdown wlan1");
+		    			console.log("ERR incorrect password");
+		    			ifdown.on('exit', function () { 
+		    				reply("incorrect password").code(200);
+		    				console.log('ifdown wlan1 ended!'); 
+		    			});
+		    		}
+		    	}
+		    })
+		 	
+		});
+
+		process.on('exit', function () {
+		    tail.kill();
+		});
+
+
 		//	On startup, check for settings.conf and either set up an AP or just connect to a client with those creds.
-		//if fail, reply fail. Also reset client script to get it back to the "AP only" state.
+
+		
 	});
 
 	client.stderr.on('data', function(data) {
@@ -108,7 +148,7 @@ var connect = function (request, reply) {
 		if (mining === false) {
 			setTimeout(function(){initMining()}, 4000);
 		};
-		reply("client connected").code(200);
+		
 		console.log('client ended!'); 
 	});
 }
