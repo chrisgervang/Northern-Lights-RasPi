@@ -94,6 +94,7 @@ var connect = function (request, reply) {
 		//look for success or fail logs.
 		tail.stdout.on('data', function (data) {
 		    var lines = data.toString('utf-8').split('\n');
+		    console.log("LINES: ", lines)
 		    _.forEach(lines, function(line){
 		    	var line = line.split(' raspberrypi ')[1];
 		    	if (!!line) {
