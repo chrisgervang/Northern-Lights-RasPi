@@ -47,7 +47,7 @@ var initAccess = function() {
 
 	var file = './settings.json';
 	jf.readFile(file, function(err, obj) {
-	  console.log(err, util.inspect(obj)); 
+	  console.log(err, obj)); 
 
 	  if (!err) {
 	  	//file exists and we should start up a client

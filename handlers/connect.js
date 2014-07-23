@@ -105,11 +105,7 @@ var connect = function (request, reply) {
 		    		if(_.contains(line, "dhclient: bound to ")) {
 		    			//the connection was a success!
 		    			console.log("SUC connected to " + credentials.ssid);
-		    			var settings = {
-		    				ssid: credentials.ssid,
-		    				password: credentials.password,
-		    				persist: true
-		    			};
+		    			var settings = { ssid: credentials.ssid, password: credentials.password, persist: true };
 		    			var file = "./settings.json";
 
 		    			jf.writeFile(file, settings, function(err) {
