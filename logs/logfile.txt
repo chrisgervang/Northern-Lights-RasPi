@@ -1,0 +1,131 @@
+ [2014-07-21 16:07:22] Started bfgminer 4.4.0-32-gac4e9b3
+ [2014-07-21 16:07:22] Found BPM 0 at /dev/ttyACM0
+ [2014-07-21 16:07:22] Found BPM 1 at /dev/ttyACM1
+ [2014-07-21 16:07:22] Probing for an alive pool
+ [2014-07-21 16:07:22] Testing pool stratum+tcp://uk1.ghash.io:3333
+ [2014-07-21 16:07:22] HTTP request failed: Protocol stratum+tcp not supported or disabled in libcurl
+ [2014-07-21 16:07:23] Stratum authorisation success for pool 0
+ [2014-07-21 16:07:23] Pool 0 stratum+tcp://uk1.ghash.io:3333 alive
+ [2014-07-21 16:07:23] Network difficulty changed to 17.3G (124.1P)
+ [2014-07-21 16:07:23] New block: ...b807f295 #311892 diff 17.3G (124.1P)
+ [2014-07-21 16:07:23] Stratum from pool 0 detected new block
+ [2014-07-21 16:07:23] BPM 1: Opened /dev/ttyACM1
+ [2014-07-21 16:07:23] BPM 0: Opened /dev/ttyACM0
+ [2014-07-21 16:07:25] New best share: 1
+ [2014-07-21 16:07:25] New best share: 3
+ [2014-07-21 16:07:31] New best share: 7
+ [2014-07-21 16:07:44] 20s: 1.59 avg: 4.11 u: 4.50 Gh/s | A:0 R:0+0(none) HW:0/none
+ [2014-07-21 16:07:50] Pool 0 is hiding block contents from us
+ [2014-07-21 16:07:51] New best share: 12
+ [2014-07-21 16:07:53] New best share: 18
+ [2014-07-21 16:07:53] Accepted 0db0a3dc BPM 0  Diff 18/16 
+ [2014-07-21 16:08:04] 20s: 2.82 avg: 4.43 u: 5.03 Gh/s | A:1 R:0+0(none) HW:1/2.1%
+ [2014-07-21 16:08:24] 20s: 3.50 avg: 4.48 u: 4.43 Gh/s | A:1 R:0+0(none) HW:2/3.1%
+ [2014-07-21 16:08:31] New best share: 21
+ [2014-07-21 16:08:31] Accepted 0bc877a9 BPM 1  Diff 21/16 
+ [2014-07-21 16:08:36] New best share: 27
+ [2014-07-21 16:08:36] Accepted 09428383 BPM 1  Diff 27/16 
+ [2014-07-21 16:08:44] 20s: 3.92 avg: 4.51 u: 4.50 Gh/s | A:3 R:0+0(none) HW:2/2.3%
+ [2014-07-21 16:08:53] New best share: 32
+ [2014-07-21 16:08:53] Accepted 07cf45b0 BPM 0  Diff 32/16 
+ [2014-07-21 16:08:54] New best share: 56
+ [2014-07-21 16:08:54] Accepted 0482827e BPM 1  Diff 56/16 
+ [2014-07-21 16:09:02] Accepted 08376d68 BPM 0  Diff 31/16 
+ [2014-07-21 16:09:04] 20s: 4.24 avg: 4.55 u: 4.58 Gh/s | A:6 R:0+0(none) HW:3/2.7%
+ [2014-07-21 16:09:09] Accepted 0fb37cd1 BPM 0  Diff 16/16 
+ [2014-07-21 16:09:10] Accepted 0e8e10d9 BPM 1  Diff 17/16 
+ [2014-07-21 16:09:13] Accepted 081ccdc8 BPM 0  Diff 31/16 
+ [2014-07-21 16:09:24] 20s: 4.37 avg: 4.56 u: 4.71 Gh/s | A:9 R:0+0(none) HW:3/2.2%
+ [2014-07-21 16:09:25] New block: ...566ee865 #311893 diff 17.3G (124.1P)
+ [2014-07-21 16:09:25] Stratum from pool 0 detected new block
+ [2014-07-21 16:09:44] 20s: 4.70 avg: 4.65 u: 4.68 Gh/s | A:9 R:0+0(none) HW:4/2.5%
+ [2014-07-21 16:09:53] New best share: 109
+ [2014-07-21 16:09:53] Accepted 025782f7 BPM 1  Diff 109/16 
+ [2014-07-21 16:10:04] 20s: 4.66 avg: 4.65 u: 4.93 Gh/s | A:10 R:0+0(none) HW:5/2.6%
+ [2014-07-21 16:10:24] 20s: 4.51 avg: 4.60 u: 4.81 Gh/s | A:10 R:0+0(none) HW:6/2.9%
+ [2014-07-21 16:10:35] Accepted 08167f75 BPM 1  Diff 31/16 
+ [2014-07-21 16:10:42] Accepted 0a41708f BPM 1  Diff 24/16 
+ [2014-07-21 16:10:44] 20s: 4.54 avg: 4.60 u: 4.80 Gh/s | A:12 R:0+0(none) HW:6/2.6%
+ [2014-07-21 16:10:53] Accepted 09c07881 BPM 1  Diff 26/16 
+ [2014-07-21 16:11:03] Accepted 029350b1 BPM 0  Diff 99/16 
+ [2014-07-21 16:11:04] 20s: 4.62 avg: 4.62 u: 4.75 Gh/s | A:14 R:0+0(none) HW:7/2.8%
+ [2014-07-21 16:11:24] 20s: 4.85 avg: 4.67 u: 4.73 Gh/s | A:14 R:0+0(none) HW:7/2.6%
+ [2014-07-21 16:11:26] Accepted 0db2d264 BPM 0  Diff 18/16 
+ [2014-07-21 16:11:29] Accepted 057d11d7 BPM 0  Diff 46/16 
+ [2014-07-21 16:11:45] 20s: 4.70 avg: 4.65 u: 4.64 Gh/s | A:16 R:0+0(none) HW:9/3.1%
+ [2014-07-21 16:11:47] Accepted 09c9cc5a BPM 0  Diff 26/16 
+ [2014-07-21 16:12:00] Accepted 0b2f7479 BPM 1  Diff 22/16 
+ [2014-07-21 16:12:05] 20s: 4.72 avg: 4.66 u: 4.61 Gh/s | A:18 R:0+0(none) HW:10/3.2%
+ [2014-07-21 16:12:05] Accepted 0c304741 BPM 1  Diff 21/16 
+ [2014-07-21 16:12:25] 20s: 4.67 avg: 4.65 u: 4.65 Gh/s | A:19 R:0+0(none) HW:10/3.0%
+ [2014-07-21 16:12:33] Accepted 0c1978a9 BPM 1  Diff 21/16 
+ [2014-07-21 16:12:35] Accepted 0d719b9b BPM 0  Diff 19/16 
+ [2014-07-21 16:12:45] 20s: 4.70 avg: 4.66 u: 4.70 Gh/s | A:21 R:0+0(none) HW:11/3.0%
+ [2014-07-21 16:13:05] 20s: 4.65 avg: 4.65 u: 4.65 Gh/s | A:21 R:0+0(none) HW:11/2.9%
+ [2014-07-21 16:13:25] 20s: 4.87 avg: 4.68 u: 4.68 Gh/s | A:21 R:0+0(none) HW:13/3.2%
+ [2014-07-21 16:13:41] Accepted 0fda9c4a BPM 0  Diff 16/16 
+ [2014-07-21 16:13:45] 20s: 4.83 avg: 4.69 u: 4.68 Gh/s | A:22 R:0+0(none) HW:14/3.3%
+ [2014-07-21 16:14:02] Accepted 0a90ef56 BPM 1  Diff 24/16 
+ [2014-07-21 16:14:05] 20s: 4.55 avg: 4.66 u: 4.70 Gh/s | A:23 R:0+0(none) HW:14/3.1%
+ [2014-07-21 16:14:15] New best share: 116
+ [2014-07-21 16:14:16] Accepted 02324092 BPM 0  Diff 116/16 
+ [2014-07-21 16:14:25] 20s: 4.62 avg: 4.66 u: 4.67 Gh/s | A:24 R:0+0(none) HW:14/3.0%
+ [2014-07-21 16:14:45] 20s: 4.61 avg: 4.66 u: 4.70 Gh/s | A:24 R:0+0(none) HW:14/2.8%
+ [2014-07-21 16:15:03] Accepted 042708fd BPM 1  Diff 61/16 
+ [2014-07-21 16:15:05] 20s: 4.66 avg: 4.66 u: 4.73 Gh/s | A:25 R:0+0(none) HW:15/2.9%
+ [2014-07-21 16:15:25] 20s: 4.88 avg: 4.69 u: 4.68 Gh/s | A:25 R:0+0(none) HW:15/2.8%
+ [2014-07-21 16:15:40] Accepted 0f2e0b26 BPM 0  Diff 16/16 
+ [2014-07-21 16:15:45] 20s: 4.82 avg: 4.69 u: 4.66 Gh/s | A:26 R:0+0(none) HW:15/2.7%
+ [2014-07-21 16:15:58] Accepted 0444853c BPM 1  Diff 59/16 
+ [2014-07-21 16:15:58] Accepted 0fda3ea8 BPM 0  Diff 16/16 
+ [2014-07-21 16:16:05] 20s: 4.79 avg: 4.69 u: 4.69 Gh/s | A:28 R:0+0(none) HW:15/2.6%
+ [2014-07-21 16:16:25] 20s: 4.71 avg: 4.69 u: 4.65 Gh/s | A:28 R:0+0(none) HW:16/2.7%
+ [2014-07-21 16:16:45] 20s: 4.72 avg: 4.69 u: 4.64 Gh/s | A:28 R:0+0(none) HW:18/2.9%
+ [2014-07-21 16:16:52] Accepted 05d00e49 BPM 1  Diff 44/16 
+ [2014-07-21 16:16:54] Accepted 089926b9 BPM 1  Diff 29/16 
+ [2014-07-21 16:17:06] 20s: 4.55 avg: 4.67 u: 4.71 Gh/s | A:30 R:0+0(none) HW:19/2.9%
+ [2014-07-21 16:17:13] Accepted 0966378b BPM 0  Diff 27/16 
+ [2014-07-21 16:17:26] 20s: 4.56 avg: 4.67 u: 4.71 Gh/s | A:31 R:0+0(none) HW:19/2.8%
+ [2014-07-21 16:17:46] 20s: 4.58 avg: 4.67 u: 4.66 Gh/s | A:31 R:0+0(none) HW:19/2.7%
+ [2014-07-21 16:17:57] Accepted 0315efe9 BPM 1  Diff 82/16 
+ [2014-07-21 16:18:06] 20s: 4.83 avg: 4.69 u: 4.68 Gh/s | A:32 R:0+0(none) HW:19/2.6%
+ [2014-07-21 16:18:20] Accepted 0729a994 BPM 0  Diff 35/16 
+ [2014-07-21 16:18:20] Accepted 0aa7cf58 BPM 0  Diff 24/16 
+ [2014-07-21 16:18:27] 20s: 4.77 avg: 4.69 u: 4.70 Gh/s | A:34 R:0+0(none) HW:19/2.6%
+ [2014-07-21 16:18:34] Accepted 069f4f3f BPM 0  Diff 38/16 
+ [2014-07-21 16:18:47] 20s: 4.76 avg: 4.69 u: 4.63 Gh/s | A:35 R:0+0(none) HW:20/2.6%
+ [2014-07-21 16:19:00] Received kill message
+ [2014-07-21 16:19:00] BPM 0 shutting down
+ [2014-07-21 16:19:01] Killing BPM 0
+ [2014-07-21 16:19:01] Killing BPM 1
+ [2014-07-21 16:19:01] 
+Summary of runtime statistics:
+
+ [2014-07-21 16:19:01] Started at [2014-07-21 16:07:23]
+ [2014-07-21 16:19:01] Pool: stratum+tcp://uk1.ghash.io:3333
+ [2014-07-21 16:19:01] Runtime: 0 hrs : 11 mins : 37 secs
+ [2014-07-21 16:19:01] Average hashrate: 4780.9 Megahash/s
+ [2014-07-21 16:19:01] Solved blocks: 0
+ [2014-07-21 16:19:01] Best share difficulty: 116
+ [2014-07-21 16:19:01] Share submissions: 35
+ [2014-07-21 16:19:01] Accepted shares: 35
+ [2014-07-21 16:19:01] Rejected shares: 0 + 0 stale (0.00%)
+ [2014-07-21 16:19:01] Accepted difficulty shares: 560
+ [2014-07-21 16:19:01] Rejected difficulty shares: 0
+ [2014-07-21 16:19:01] Hardware errors: 22
+ [2014-07-21 16:19:01] Network transfer:  23.4 /   6.6 kB  ( 34.2 /   9.6  B/s)
+ [2014-07-21 16:19:01] Efficiency (accepted shares * difficulty / 2 KB): 38.32
+ [2014-07-21 16:19:01] Utility (accepted shares / min): 3.07/min
+
+ [2014-07-21 16:19:01] Unable to get work from server occasions: 0
+ [2014-07-21 16:19:01] Work items generated locally: 1140
+ [2014-07-21 16:19:01] Submitting work remotely delay occasions: 0
+ [2014-07-21 16:19:01] New blocks detected on network: 2
+
+ [2014-07-21 16:19:01] Summary of per device statistics:
+
+ [2014-07-21 16:19:01] BPM0       | 20s: 2.38 avg: 2.38 u: 2.38 Gh/s | A:18 R:0+0(none) HW:8/2.0%
+ [2014-07-21 16:19:01] BPM1       | 20s: 2.32 avg: 2.31 u: 2.26 Gh/s | A:17 R:0+0(none) HW:14/3.7%
+ [2014-07-21 16:19:01]  
+
+Shutdown signal received.
