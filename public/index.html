@@ -1,28 +1,28 @@
 <html>
-	<head>
-		<script src="jquery-1.11.1.js"></script>
-	</head>
-	<body>
-		Northern Lights
-		<form action="#">
-			 WiFi Network: <input class="ssid" value="Gervang Wireless" type="text" name="SSID">
-			 Password: <input class="password" value="cocoapunch" type="password" name="password">
-			 <input type="submit" class="post-it" value="Connect" target="_self">
-		</form>
-		<script>
-			$('.post-it').on('click', function (e) {
-				e.preventDefault()
-				var data = {
-					ssid: $('.ssid').val(),
-					password: $('.password').val()
-				}
-				$('.ssid').val("");
-				$('.password').val("");
-				console.log(data);
-				$.post("/connect", data, function(res) {
-				  console.log(res);
-				});
-			});
-		</script>
-	</body>
+  <head>
+    <script src="jquery-1.11.1.js"></script>
+  </head>
+  <body>
+    Northern Lights
+    <form action="#">
+       WiFi Network: <input class="ssid" value="Gervang Wireless" type="text" name="SSID">
+       Password: <input class="password" value="cocoapunch" type="password" name="password">
+       <input type="submit" class="post-it" value="Connect" target="_self">
+    </form>
+    <script>
+      $('.post-it').on('click', function (e) {
+        e.preventDefault()
+        var data = {
+          ssid: $('.ssid').val(),
+          password: $('.password').val()
+        }
+        $('.ssid').val("");
+        $('.password').val("");
+        console.log(data);
+        $.post("/connect", data, function(res) {
+          console.log(res);
+        });
+      });
+    </script>
+  </body>
 </html>
