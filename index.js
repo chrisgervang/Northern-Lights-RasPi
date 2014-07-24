@@ -10,11 +10,28 @@ var puts        = function(error, stdout, stderr) { sys.puts(stdout) }
 var EventSource = require('eventsource');
 var _           = require('lodash');
 var jf          = require('jsonfile');
-//require("./check-online.js");
 var initMining  = require('./lib/mining.js').initMining;
+var colors      = require('colors');
 
+colors.setTheme({
+  silly: 'rainbow',
+  input: 'grey',
+  verbose: 'cyan',
+  prompt: 'grey',
+  info: 'green',
+  data: 'grey',
+  help: 'cyan',
+  warn: 'yellow',
+  debug: 'blue',
+  error: 'red'
+});
+//require("./check-online.js");
 
+// outputs red text
+console.log("this is an error".error);
 
+// outputs yellow text
+console.log("this is a warning".warn);
 
 
 var initAccess = function() {
@@ -23,18 +40,18 @@ var initAccess = function() {
 
   var file = './settings.json';
   jf.readFile(file, function(err, credentials) {
-    console.log(err, credentials); 
+    // console.log(err, credentials); 
 
     if (!err) {
       //file exists and we should start up a client
       var client = exec('sudo sh ./client.sh wlan1 \"' + credentials.ssid + '\" ' + credentials.password + ' wlan0');
       
       client.stdout.on('data', function(data) {
-        console.log('stdout: ' + data);
+        console.log('stdout: '+data+''.info);
       });
 
       client.stderr.on('data', function(data) {
-          console.log('stderr: ' + data);
+          console.log('stderr: '+data+''.error);
       });
       
       client.on('exit', function () { 
@@ -42,7 +59,7 @@ var initAccess = function() {
         if (miningState === false) {
           setTimeout(function(){initMining()}, 4000);
         }
-        console.log('client ended!'); 
+        console.log('client ended!'.info); 
       });
 
     } else {
@@ -53,15 +70,15 @@ var initAccess = function() {
       var ap = exec('sudo sh ./ap.sh wlan0');
 
       ap.stdout.on('data', function(data) {
-        console.log('stdout: ' + data);
+        console.log('stdout: '+data+''.info);
       });
 
       ap.stderr.on('data', function(data) {
-          console.log('stderr: ' + data);
+          console.log('stderr: '+data+''.error);
       });
       
       ap.on('exit', function () { 
-        console.log('ap ended!'); 
+        console.log('ap ended!'.info); 
         initServer();   
       });
     }
@@ -71,7 +88,7 @@ var initAccess = function() {
 // exec("sudo ifconfig wlan1 down", puts);
 setTimeout(function(){initAccess()}, 1500);
 
-console.log("watching file");
+console.log("watching file".debug);
 
 var tail = spawn('tail', ['-f', '-n', '1', "/var/log/syslog"]);
 
@@ -80,7 +97,7 @@ tail.stdout.on('data', function (data) {
   _.forEach(lines, function(line){
     var line = line.split(' raspberrypi ')[1];
     if (!!line) {
-      console.log(line);
+      console.log(line+''.data);
     }
   });
 });
@@ -91,7 +108,7 @@ process.on('exit', function () {
 
 
 var initServer = function() {
-  console.log("init server");
+  console.log("init server".debug);
   // Create a server with a host and port
   var server = Hapi.createServer('10.4.20.1', 8000);
 
@@ -107,10 +124,10 @@ var initServer = function() {
       method: 'GET', path: '/networks', handler: networks
     }
   ]);
-  console.log("init routes");
+  console.log("init routes".debug);
 
   // Start the server
   server.start();
-  console.log("start server");
+  console.log("start server".debug);
 }
 
