@@ -25,6 +25,10 @@ echo "moving /home/pi/node to /usr/sbin where scripts that require super-user ac
 # moved node to /bin/sbin/nodejs 6/12
 mv /home/pi/node /usr/sbin/nodejs
 
+apt-get update
+
+apt-get upgrade
+
 echo "install dhcp and hostapd"
 apt-get install hostapd isc-dhcp-server
 
@@ -106,9 +110,7 @@ cd /home/pi
 #      GOTO=“persistent_net_generator_end”
 # } 7/12 worked!
 
-apt-get update
 
-apt-get upgrade
 
 echo "subnet 10.4.20.0 netmask 255.255.255.0 {" >> /etc/dhcp/dhcpd.conf
 echo "range 10.4.20.10 10.4.20.50;" >> /etc/dhcp/dhcpd.conf
@@ -131,6 +133,8 @@ echo "auth_algs=1" >> /etc/hostapd/hostapd.conf
 echo "ignore_broadcast_ssid=0" >> /etc/hostapd/hostapd.conf
 
 npm install -g pm2
+
+cd /home/pi/NL-Pi
 
 npm install
 
