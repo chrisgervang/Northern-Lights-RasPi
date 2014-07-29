@@ -66,7 +66,7 @@ var initAccess = function() {
       //error with persistent file, so lets boot up the onboarding way!
     
       //init access point
-      console.log("Tried to spawn ap");
+      console.log("Tried to spawn ap".warn);
       var ap = exec('sudo sh ./lib/sh/ap.sh wlan0');
 
       ap.stdout.on('data', function(data) {
