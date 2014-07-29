@@ -39,9 +39,10 @@ var initAccess = function() {
   //  On startup, check for settings.conf and either set up an AP or just connect to a client with those creds.
 
   var file = './settings.json';
+  var creds;
   jf.readFile(file, function(err, credentials) {
     // console.log(err, credentials); 
-
+    creds = credentials;
     if (!err) {
       onboarding = false;
       //file exists and we should start up a client
@@ -99,7 +100,7 @@ tail.stdout.on('data', function (data) {
       //If success, reply success. Save credentials in a new file called "settings.conf".
       if(_.contains(line, "dhclient: bound to ") && onboarding === false) {
         //the connection was a success!
-        console.log(("connected to " + credentials.ssid).info);
+        console.log(("connected to " + creds.ssid).info);
         var miningState = require('./lib/mining.js').miningState;
         if (miningState === false) {
           setTimeout(function(){initMining()}, 1000);
