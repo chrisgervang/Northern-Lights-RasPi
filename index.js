@@ -115,7 +115,9 @@ tail.stdout.on('data', function (data) {
           //reply("incorrect password").code(200);
           console.log('ifdown wlan1 ended!'.debug); 
         });
-      }
+      } else if(_.contains(line, ": Accepted "){
+        console.log("new pool work!".info);
+      })
     }
   });
 });
