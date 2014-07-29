@@ -24,7 +24,7 @@ changed {
 8. reboot
 9. check to make sure hostapd and isc-dhcp-server are NOT running and that wlan0 and wlan1 are not changing.
 9a. you can check with sudo service hostapd status and sudo service ics-dhcp-server and sudo nano /etc/udev/rules.d/70-persistent-net.rules
-10. In ~/NL-Pi: sudo pm2 startup debian
+10. In ~/NL-Pi: sudo env PATH=$PATH:/usr/sbin/nodejs/bin pm2 startup debian -u pi
 
 
 You’re done! 
