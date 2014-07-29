@@ -47,11 +47,11 @@ var initAccess = function() {
       var client = exec('sudo sh ./lib/sh/client.sh wlan1 \"' + credentials.ssid + '\" ' + credentials.password + ' wlan0');
       
       client.stdout.on('data', function(data) {
-        console.log('stdout: '+data+''.info);
+        console.log(('stdout: '+data).info);
       });
 
       client.stderr.on('data', function(data) {
-          console.log('stderr: '+data+''.error);
+          console.log(('stderr: '+data).error);
       });
       
       client.on('exit', function () { 
@@ -70,11 +70,11 @@ var initAccess = function() {
       var ap = exec('sudo sh ./lib/sh/ap.sh wlan0');
 
       ap.stdout.on('data', function(data) {
-        console.log('stdout: '+data+''.info);
+        console.log(('stdout: '+data).info);
       });
 
       ap.stderr.on('data', function(data) {
-          console.log('stderr: '+data+''.error);
+          console.log(('stderr: '+data).error);
       });
       
       ap.on('exit', function () { 
@@ -97,7 +97,7 @@ tail.stdout.on('data', function (data) {
   _.forEach(lines, function(line){
     var line = line.split(' raspberrypi ')[1];
     if (!!line) {
-      console.log(line+''.data);
+      console.log((line).data);
     }
   });
 });
