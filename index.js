@@ -33,13 +33,13 @@ console.log("this is an error".error);
 // outputs yellow text
 console.log("this is a warning".warn);
 var onboarding = true;
-
+var creds;
 var initAccess = function() {
   
   //  On startup, check for settings.conf and either set up an AP or just connect to a client with those creds.
 
   var file = './settings.json';
-  var creds;
+  
   jf.readFile(file, function(err, credentials) {
     // console.log(err, credentials); 
     creds = credentials;
