@@ -117,7 +117,7 @@ tail.stdout.on('data', function (data) {
         });
       } else if(_.contains(line, ": Accepted "){
         console.log("new pool work!".info);
-      })
+      }
     }
   });
 });
