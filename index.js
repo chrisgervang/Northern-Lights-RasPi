@@ -44,7 +44,7 @@ var initAccess = function() {
 
     if (!err) {
       //file exists and we should start up a client
-      var client = exec('sudo sh ./client.sh wlan1 \"' + credentials.ssid + '\" ' + credentials.password + ' wlan0');
+      var client = exec('sudo sh ./lib/sh/client.sh wlan1 \"' + credentials.ssid + '\" ' + credentials.password + ' wlan0');
       
       client.stdout.on('data', function(data) {
         console.log('stdout: '+data+''.info);
@@ -67,7 +67,7 @@ var initAccess = function() {
     
       //init access point
       console.log("Tried to spawn ap");
-      var ap = exec('sudo sh ./ap.sh wlan0');
+      var ap = exec('sudo sh ./lib/sh/ap.sh wlan0');
 
       ap.stdout.on('data', function(data) {
         console.log('stdout: '+data+''.info);

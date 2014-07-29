@@ -139,3 +139,5 @@ cd /home/pi/NL-Pi
 npm install
 
 git config remote.origin.url https://chrisgervang:kwy469655491@github.com/chrisgervang/NL-Pi.git
+git config --global user.email "chrisgervang@gmail.com"
+git config --global user.name "Chris Gervang"
