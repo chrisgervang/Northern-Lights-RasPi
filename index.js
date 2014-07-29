@@ -125,10 +125,8 @@ tail.stdout.on('data', function (data) {
 process.on('exit', function () {
   tail.kill();
 });
-process.on('message', function(msg) {
-  if (msg === 'shutdown') {
+process.on('SIGTERM', function(msg) {
     tail.kill();
-  }
 });
 
 
