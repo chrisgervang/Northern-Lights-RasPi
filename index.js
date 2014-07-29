@@ -105,6 +105,13 @@ tail.stdout.on('data', function (data) {
         if (miningState === false) {
           setTimeout(function(){initMining()}, 1000);
         };
+
+        var killeth0 = exec("sudo ifdown eth0");
+
+        killeth0.stdout.on('data', function(data) {
+          console.log(('stdout: '+data).info);
+        });
+
         //reply("client connected").code(200);
       
       //If fail, reply fail. Also reset client script to get it back to the "AP only" state.
