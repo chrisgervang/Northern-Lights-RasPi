@@ -22,6 +22,8 @@ service hostapd stop
 
 pm2 stop all
 
+rm /home/pi/NL-Pi/settings.json
+
 update-rc.d -f pm2-init.sh remove
 
 echo "writting to /etc/interfaces/"
