@@ -32,7 +32,7 @@ console.log("this is an error".error);
 
 // outputs yellow text
 console.log("this is a warning".warn);
-
+var onboarding = true;
 
 var initAccess = function() {
   
@@ -43,6 +43,7 @@ var initAccess = function() {
     // console.log(err, credentials); 
 
     if (!err) {
+      onboarding = false;
       //file exists and we should start up a client
       var client = exec('sudo sh ./lib/sh/client.sh wlan1 \"' + credentials.ssid + '\" ' + credentials.password + ' wlan0');
       
@@ -55,10 +56,6 @@ var initAccess = function() {
       });
       
       client.on('exit', function () { 
-        var miningState = require('./lib/mining.js').miningState;
-        if (miningState === false) {
-          setTimeout(function(){initMining()}, 4000);
-        }
         console.log('client ended!'.info); 
       });
 
@@ -98,6 +95,26 @@ tail.stdout.on('data', function (data) {
     var line = line.split(' raspberrypi ')[1];
     if (!!line) {
       console.log((line).data);
+
+      //If success, reply success. Save credentials in a new file called "settings.conf".
+      if(_.contains(line, "dhclient: bound to ") && onboarding === false) {
+        //the connection was a success!
+        console.log(("connected to " + credentials.ssid).info);
+        var miningState = require('./lib/mining.js').miningState;
+        if (miningState === false) {
+          setTimeout(function(){initMining()}, 1000);
+        };
+        //reply("client connected").code(200);
+      
+      //If fail, reply fail. Also reset client script to get it back to the "AP only" state.
+      } else if(_.contains(line, "wlan1: WPA: 4-Way Handshake failed - pre-shared key may be incorrect") && onboarding === false) {
+        var ifdown = exec("sudo ifdown wlan1");
+        console.log("incorrect password".error);
+        ifdown.on('exit', function () { 
+          //reply("incorrect password").code(200);
+          console.log('ifdown wlan1 ended!'.debug); 
+        });
+      }
     }
   });
 });
