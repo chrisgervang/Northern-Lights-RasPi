@@ -12,6 +12,9 @@ var _           = require('lodash');
 var jf          = require('jsonfile');
 var initMining  = require('./lib/mining.js').initMining;
 var colors      = require('colors');
+var Primus      = require('primus');
+
+var Socket = Primus.createSocket({ transformer: 'engine.io' });
 
 colors.setTheme({
   silly: 'rainbow',
@@ -111,7 +114,20 @@ tail.stdout.on('data', function (data) {
         killeth0.stdout.on('data', function(data) {
           console.log(('stdout: '+data).info);
         });
+        tail.kill();
 
+
+        var client = new Socket('http://107.170.245.191:9000');
+
+        client.on('open', function open() {
+          console.log('Connection is alive and kicking');
+          client.write({id: "q1"});
+        });
+
+        client.on('data', function message(data) {
+          console.log('Received a new message from the server', data);
+        });
+        
         //reply("client connected").code(200);
       
       //If fail, reply fail. Also reset client script to get it back to the "AP only" state.
@@ -121,6 +137,7 @@ tail.stdout.on('data', function (data) {
         ifdown.on('exit', function () { 
           //reply("incorrect password").code(200);
           console.log('ifdown wlan1 ended!'.debug); 
+          tail.kill();
         });
       } else if(_.contains(line, ": Accepted ")){
         console.log("new pool work!".info);
