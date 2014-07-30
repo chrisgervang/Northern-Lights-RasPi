@@ -152,6 +152,14 @@ var initServer = function() {
       }
     },{
       method: 'GET', path: '/networks', handler: networks
+    },{
+      method: 'GET', path: '/id', handler: function(request, reply){
+        fs.readFile('/home/pi/config.txt', function(err, data) {
+            if(err) throw err;
+            var id = data.toString();
+            reply(id).code(200);
+        });
+      }
     }
   ]);
   console.log("init routes".debug);
