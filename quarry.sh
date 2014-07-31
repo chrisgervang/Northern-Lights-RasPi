@@ -15,7 +15,7 @@
 case "$1" in
   start)
     sudo env PATH=$PATH:/home/pi/npm/bin forever -a -l /home/pi/quarry.log --minUptime 5000 --spinSleepTime 2000 start /home/pi/NL-Pi/index.js
-    echo("starting shizz");
+    echo "starting shizz"
     ;;
   stop)
     sudo env PATH=$PATH:/home/pi/npm/bin forever stopall
