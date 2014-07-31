@@ -49,7 +49,7 @@ var initAccess = function() {
     if (!err) {
       onboarding = false;
       //file exists and we should start up a client
-      var client = exec('sudo sh ./lib/sh/client.sh wlan1 \"' + credentials.ssid + '\" ' + credentials.password + ' wlan0');
+      var client = exec('sudo sh /home/pi/NL-Pi/lib/sh/client.sh wlan1 \"' + credentials.ssid + '\" ' + credentials.password + ' wlan0');
       
       client.stdout.on('data', function(data) {
         console.log(('stdout: '+data).info);
@@ -68,7 +68,7 @@ var initAccess = function() {
     
       //init access point
       console.log("Tried to spawn ap".warn);
-      var ap = exec('sudo sh ./lib/sh/ap.sh wlan0');
+      var ap = exec('sudo sh /home/pi/NL-Pi/lib/sh/ap.sh wlan0');
 
       ap.stdout.on('data', function(data) {
         console.log(('stdout: '+data).info);
@@ -127,7 +127,7 @@ tail.stdout.on('data', function (data) {
         client.on('data', function message(data) {
           console.log('Received a new message from the server', data);
         });
-        
+
         //reply("client connected").code(200);
       
       //If fail, reply fail. Also reset client script to get it back to the "AP only" state.
