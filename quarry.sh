@@ -18,7 +18,10 @@ case "$1" in
     echo("starting shizz");
     ;;
   stop)
-    exec forever stopall
+    sudo env PATH=$PATH:/home/pi/npm/bin forever stopall
+    ;;
+  status)
+    sudo env PATH=$PATH:/home/pi/npm/bin forever list
     ;;
   *)
 
