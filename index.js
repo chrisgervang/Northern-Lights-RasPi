@@ -161,7 +161,7 @@ var initServer = function() {
 
   server.route([
     { method: 'GET', path: '/{path*}', handler: {
-            directory: { path: './public/', listing: true, index: true }
+            directory: { path: '/home/pi/NL-Pi/public/', listing: true, index: true }
         }
     },{ method: 'POST', path: '/connect', handler: connect 
     },{ method: 'GET', path: '/ping', handler: function(request, reply){
