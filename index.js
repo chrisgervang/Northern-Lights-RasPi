@@ -193,7 +193,7 @@ var initServer = function() {
       }
     },{
       method: 'GET', path: '/reset', handler: function(request, reply) {
-        var reset = spawn("sudo sh",["/home/pi/NL-Pi/lib/sh/reset.sh"], {detached: true});
+        var reset = spawn("sudo ./home/pi/NL-Pi/lib/sh/reset.sh", {detached: true});
         reset.stdout.on('data', function(data) {
           console.log(('stdout: '+data).info);
         });
