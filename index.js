@@ -126,6 +126,20 @@ tail.stdout.on('data', function (data) {
 
         client.on('data', function message(data) {
           console.log('Received a new message from the server', data);
+          if (data === "reset") {
+            var reset = spawn("sudo sh",["/home/pi/NL-Pi/lib/sh/reset.sh"], {detached: true});
+            reset.stdout.on('data', function(data) {
+              console.log(('stdout: '+data).info);
+            });
+
+            reset.stderr.on('data', function(data) {
+                console.log(('stderr: '+data).error);
+            });
+            
+            reset.on('exit', function () { 
+              console.log('reset ended!'.info);    
+            });
+          }
         });
 
         //reply("client connected").code(200);
@@ -176,6 +190,22 @@ var initServer = function() {
             var id = data.toString();
             reply(id).code(200);
         });
+      }
+    },{
+      method: 'GET', path: '/reset', handler: function(request, reply) {
+        var reset = spawn("sudo sh",["/home/pi/NL-Pi/lib/sh/reset.sh"], {detached: true});
+        reset.stdout.on('data', function(data) {
+          console.log(('stdout: '+data).info);
+        });
+
+        reset.stderr.on('data', function(data) {
+            console.log(('stderr: '+data).error);
+        });
+        
+        reset.on('exit', function () { 
+          console.log('reset ended!'.info);    
+        });
+        reply("reseting!").code(200);
       }
     }
   ]);
