@@ -193,7 +193,15 @@ var initServer = function() {
       }
     },{
       method: 'GET', path: '/reset', handler: function(request, reply) {
-        var reset = spawn("./home/pi/NL-Pi/lib/sh/reset.sh", {detached: true});
+        var sudo = require('sudo');
+        var options = {
+            cachePassword: true,
+            prompt: 'Password, yo? ',
+            spawnOptions: { detached: true }
+        };
+        var reset = sudo([ 'sh', '/home/pi/NL-Pi/lib/sh/reset.sh'], options);
+
+        //var reset = spawn("./home/pi/NL-Pi/lib/sh/reset.sh", {detached: true});
         reset.stdout.on('data', function(data) {
           console.log(('stdout: '+data).info);
         });
