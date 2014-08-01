@@ -45,5 +45,6 @@ echo "\nfile write complete\n"
 dhclient -r eth0
 
 ifdown eth0
-
+service quarry start
 ifup eth0
+

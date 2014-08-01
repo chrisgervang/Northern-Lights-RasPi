@@ -171,7 +171,7 @@ process.on('SIGTERM', function(msg) {
 var initServer = function() {
   console.log("init server".debug);
   // Create a server with a host and port
-  var server = Hapi.createServer('10.4.20.1', 8000);
+  var server = Hapi.createServer('10.4.20.1', 8000, {cors: true});
 
   server.route([
     { method: 'GET', path: '/{path*}', handler: {
