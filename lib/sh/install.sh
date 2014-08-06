@@ -132,12 +132,21 @@ echo "macaddr_acl=0" >> /etc/hostapd/hostapd.conf
 echo "auth_algs=1" >> /etc/hostapd/hostapd.conf
 echo "ignore_broadcast_ssid=0" >> /etc/hostapd/hostapd.conf
 
-npm install -g pm2
+# npm install -g pm2
+
+cp /home/pi/NL-Pi/lib/sh/quarry.sh /etc/init.d/quarry
+chmod 755 /etc/init.d/quarry
+update-rc.d quarry defaults
+
+echo "TODO: move npm global folder to ~/npm"
+echo "adding to PATH /home/pi/npm/bin"
+
+# echo "export PATH=/home/pi/npm/bin:$PATH" >> /home/pi/.bashrc
+
+echo "please run npm install & npm install -g forever"
 
 cd /home/pi/NL-Pi
-
-npm install
-
 git config remote.origin.url https://chrisgervang:kwy469655491@github.com/chrisgervang/NL-Pi.git
 git config --global user.email "chrisgervang@gmail.com"
 git config --global user.name "Chris Gervang"
+
