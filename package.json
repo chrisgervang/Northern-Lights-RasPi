@@ -1,6 +1,6 @@
 {
   "name": "NL-Pi",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Raspberry Pi Experience Prototype for Northern Lights",
   "main": "index.js",
   "scripts": {
