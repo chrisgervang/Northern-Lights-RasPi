@@ -138,13 +138,13 @@ cp /home/pi/NL-Pi/lib/sh/quarry.sh /etc/init.d/quarry
 chmod 755 /etc/init.d/quarry
 update-rc.d quarry defaults
 
-echo "TODO: move npm global folder to ~/npm"
+# echo "TODO: move npm global folder to ~/npm"
+
 echo "adding to PATH /home/pi/npm/bin"
-
-# echo "export PATH=/home/pi/npm/bin:$PATH" >> /home/pi/.bashrc
-
+echo "export PATH=/home/pi/npm/bin:$PATH" >> /home/pi/.bashrc
+# npm install -g foreve
 echo "please run npm install & npm install -g forever"
-
+echo "npm config set prefix ~/npm <- run that too"
 cd /home/pi/NL-Pi
 git config remote.origin.url https://chrisgervang:kwy469655491@github.com/chrisgervang/NL-Pi.git
 git config --global user.email "chrisgervang@gmail.com"
