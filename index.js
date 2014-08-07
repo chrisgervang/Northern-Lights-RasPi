@@ -41,7 +41,7 @@ var initAccess = function() {
   
   //  On startup, check for settings.conf and either set up an AP or just connect to a client with those creds.
 
-  var file = './settings.json';
+  var file = '/home/pi/NL-Pi/settings.json';
   
   jf.readFile(file, function(err, credentials) {
     // console.log(err, credentials); 
