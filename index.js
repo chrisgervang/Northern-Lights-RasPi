@@ -10,7 +10,7 @@ var puts        = function(error, stdout, stderr) { sys.puts(stdout) }
 var EventSource = require('eventsource');
 var _           = require('lodash');
 var jf          = require('jsonfile');
-var initMining  = require('./lib/mining.js').initMining;
+var initMining  = require('/home/pi/NL-Pi/lib/mining.js').initMining;
 var colors      = require('colors');
 var Primus      = require('primus');
 
@@ -106,7 +106,7 @@ tail.stdout.on('data', function (data) {
         console.log(("connected to " + creds.ssid).info);
         var miningState = require('/home/pi/NL-Pi/lib/mining.js').miningState;
         if (miningState === false) {
-          setTimeout(function(){require('/home/pi/NL-Pi/lib/mining.js').initMining()}, 1000);
+          setTimeout(function(){initMining()}, 1000);
         };
 
         var killeth0 = exec("sudo ifdown eth0");
