@@ -121,7 +121,11 @@ tail.stdout.on('data', function (data) {
 
         client.on('open', function open() {
           console.log('Connection is alive and kicking');
-          client.write({id: "q1"});
+          fs.readFile('/home/pi/config.txt', function(err, data) {
+              if(err) throw err;
+              var id = data.toString();
+              client.write({id: id});
+          });
         });
 
         client.on('data', function message(data) {
