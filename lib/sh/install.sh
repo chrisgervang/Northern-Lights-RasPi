@@ -132,6 +132,9 @@ echo "macaddr_acl=0" >> /etc/hostapd/hostapd.conf
 echo "auth_algs=1" >> /etc/hostapd/hostapd.conf
 echo "ignore_broadcast_ssid=0" >> /etc/hostapd/hostapd.conf
 
+
+echo "DAEMON_CONF=\"/etc/hostapd/hostapd.conf\"" >> /etc/default/hostapd
+
 # npm install -g pm2
 
 cp /home/pi/NL-Pi/lib/sh/quarry.sh /etc/init.d/quarry

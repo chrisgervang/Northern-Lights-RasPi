@@ -104,9 +104,9 @@ tail.stdout.on('data', function (data) {
       if(_.contains(line, "dhclient: bound to ") && onboarding === false) {
         //the connection was a success!
         console.log(("connected to " + creds.ssid).info);
-        var miningState = require('./lib/mining.js').miningState;
+        var miningState = require('/home/pi/NL-Pi/lib/mining.js').miningState;
         if (miningState === false) {
-          setTimeout(function(){initMining()}, 1000);
+          setTimeout(function(){require('/home/pi/NL-Pi/lib/mining.js').initMining()}, 1000);
         };
 
         var killeth0 = exec("sudo ifdown eth0");
