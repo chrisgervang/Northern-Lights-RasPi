@@ -149,7 +149,10 @@ echo "export PATH=/home/pi/npm/bin:$PATH" >> /home/pi/.bashrc
 echo "please run npm install & npm install -g forever"
 echo "npm config set prefix ~/npm <- run that too"
 cd /home/pi/NL-Pi
-git config remote.origin.url https://chrisgervang:kwy469655491@github.com/chrisgervang/NL-Pi.git
+
+# INSERT PASSWORD IN PLACE OF ***************!!!
+
+git config remote.origin.url https://chrisgervang:*********************@github.com/chrisgervang/NL-Pi.git
 git config --global user.email "chrisgervang@gmail.com"
 git config --global user.name "Chris Gervang"
 
